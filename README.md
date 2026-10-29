@@ -20,6 +20,10 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | DIRHA-English | 영어 | LDC2018S01 약 85시간 | 다실 아파트, 다수 마이크 | 홈 음성 상호작용 | LDC 조건 미확인 | LDC | ASRU 2015 | [상세](datasets/DIRHA-English.md) |
 | AMI | 영어 | 약 100시간 | 회의, 근접+원거리 마이크 | 다화자 회의·diarization | CC BY 4.0 | 공개 | Carletta et al. 2005 | [상세](datasets/AMI.md) |
 | MChRSR | 영어 | 미확인 | PR2 이동 중 다채널 녹음 | 로봇 ego-noise ASR | 미확인 | 미확인 | 2017 | [상세](datasets/MChRSR.md) |
+| CHiME-3/4 | 영어 | 미확인 | 6채널 태블릿, 실제 잡음 환경 WSJ | 모바일·엣지 다채널 ASR | 미확인 | 미확인 | ASRU 2015 | [상세](datasets/CHiME-3-4.md) |
+| Voice Bank + DEMAND | 영어 | 28/56화자 | VCTK+DEMAND 잡음 합성 | 음성 향상 전처리 | 미확인 | 공개 (Edinburgh DataShare) | Interspeech 2016 | [상세](datasets/VoiceBank-DEMAND.md) |
+| MIVIA Speech Command | 미확인 | 미확인 | 로봇 마이크+산업 잡음 증강 | 로봇 음성 명령 | 미확인 | 공개 (Zenodo) | 미확인 | [상세](datasets/MIVIA-Speech-Command.md) |
+| VoCub | 영어 | 103 명령/29화자 | iCub 명령 | 휴머노이드 명령 인식 | 미확인 | 공개 | 미확인 | [상세](datasets/VoCub.md) |
 
 ## 논문 요약
 | 제목 | 저자 | 학회/연도 | 사용 데이터셋 | 핵심 내용 | 링크 |
@@ -33,6 +37,7 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | The DIRHA-English corpus | Ravanelli 외 | ASRU 2015 | DIRHA-English | 가정 원거리 인식 | [요약](papers/2015-DIRHA-English.md) |
 | Single-Channel Robot Ego-Speech Filtering | Li, Hindriks, Kunneman | arXiv 2024 | 자체(Pepper) | 로봇 자기 발화 제거 | [요약](papers/2024-Pepper-Ego-Speech-Filtering.md) |
 | MChRSR | 미확인 | 2017 | MChRSR | 로봇 이동 잡음 ASR | [요약](papers/2017-MChRSR.md) |
+| The third CHiME Challenge | Barker 외 | ASRU 2015 | CHiME-3 | 태블릿 6채널 잡음 ASR | [요약](papers/2015-CHiME-3.md) |
 
 ## Daily 로그
 - [2026-10-29](daily/2026-10-29.md)
