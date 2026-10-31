@@ -20,6 +20,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | DIRHA-English | 영어 | LDC2018S01 약 85시간 | 다실 아파트, 다수 마이크 | 홈 음성 상호작용 | LDC 조건 미확인 | LDC | ASRU 2015 | [상세](datasets/DIRHA-English.md) |
 | AMI | 영어 | 약 100시간 | 회의, 근접+원거리 마이크 | 다화자 회의·diarization | CC BY 4.0 | 공개 | Carletta et al. 2005 | [상세](datasets/AMI.md) |
 | MChRSR | 영어 | 미확인 | PR2 이동 중 다채널 녹음 | 로봇 ego-noise ASR | 미확인 | 미확인 | 2017 | [상세](datasets/MChRSR.md) |
+| CHiME-4 | 영어 | 미확인 | 6마이크 태블릿, 버스·카페·거리 실녹음+시뮬레이션 | 이동·야외 다채널 ASR | 미확인 | 미확인 | CHiME-4 Challenge, arXiv 2017 | [상세](datasets/CHiME-4.md) |
+| VoiceBank-DEMAND | 영어 | 학습 11,572 / 테스트 824 쌍 (2차 자료) | 클린 음성+DEMAND 잡음 합성 | 잡음 제거 front-end 기준 | CC BY 4.0(2차 자료) | 공개 (Edinburgh DataShare) | SpeechBrain, arXiv 2021 | [상세](datasets/VoiceBank-DEMAND.md) |
 
 ## 논문 요약
 | 제목 | 저자 | 학회/연도 | 사용 데이터셋 | 핵심 내용 | 링크 |
@@ -36,3 +38,4 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 
 ## Daily 로그
 - [2026-10-29](daily/2026-10-29.md)
+- [2026-10-31](daily/2026-10-31.md)
