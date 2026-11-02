@@ -20,6 +20,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | DIRHA-English | 영어 | LDC2018S01 약 85시간 | 다실 아파트, 다수 마이크 | 홈 음성 상호작용 | LDC 조건 미확인 | LDC | ASRU 2015 | [상세](datasets/DIRHA-English.md) |
 | AMI | 영어 | 약 100시간 | 회의, 근접+원거리 마이크 | 다화자 회의·diarization | CC BY 4.0 | 공개 | Carletta et al. 2005 | [상세](datasets/AMI.md) |
 | MChRSR | 영어 | 미확인 | PR2 이동 중 다채널 녹음 | 로봇 ego-noise ASR | 미확인 | 미확인 | 2017 | [상세](datasets/MChRSR.md) |
+| CHiME-4 | 영어 | 실녹음 약 3h + 시뮬 약 15h(학습) | 6마이크 태블릿, 버스·카페 등 | 이동 디바이스 다채널 ASR | 미확인 | 미확인 | Computer Speech & Language 2017 | [상세](datasets/CHiME-4.md) |
+| VoiceBank-DEMAND | 영어 | 미확인 (30명) | 깨끗한 음성+DEMAND 잡음 시뮬 | 음성 향상 front-end | CC BY 4.0(2차 자료) | 공개 (DataShare) | SpeechBrain 등 | [상세](datasets/VoiceBank-DEMAND.md) |
 
 ## 논문 요약
 | 제목 | 저자 | 학회/연도 | 사용 데이터셋 | 핵심 내용 | 링크 |
@@ -33,6 +35,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | The DIRHA-English corpus | Ravanelli 외 | ASRU 2015 | DIRHA-English | 가정 원거리 인식 | [요약](papers/2015-DIRHA-English.md) |
 | Single-Channel Robot Ego-Speech Filtering | Li, Hindriks, Kunneman | arXiv 2024 | 자체(Pepper) | 로봇 자기 발화 제거 | [요약](papers/2024-Pepper-Ego-Speech-Filtering.md) |
 | MChRSR | 미확인 | 2017 | MChRSR | 로봇 이동 잡음 ASR | [요약](papers/2017-MChRSR.md) |
+| Environment, microphone and data simulation mismatches in robust ASR | Vincent 외 | CSL 2017 | CHiME-4 | 불일치 분석(세부 미확인) | [요약](papers/2017-CHiME-4-Mismatch-Analysis.md) |
 
 ## Daily 로그
 - [2026-10-29](daily/2026-10-29.md)
+- [2026-11-02](daily/2026-11-02.md)
