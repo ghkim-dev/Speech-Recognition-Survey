@@ -27,6 +27,9 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | OmniAction | 영어 추정 | 140k 에피소드, 5k+ 화자 | 맥락적 음성 지시 로봇 조작 | 음성-VLA | 미확인 | 공개 (HF) | RoboOmni (ICLR 2026) | [상세](datasets/OmniAction.md) |
 | MIVIA Speech Command | 미확인 | 미확인 | 로봇 마이크+산업 잡음 증강 | 로봇 음성 명령 | 미확인 | 공개 (Zenodo) | 미확인 | [상세](datasets/MIVIA-Speech-Command.md) |
 | VoCub | 영어 | 103 명령/29화자 | iCub 명령 | 휴머노이드 명령 인식 | 미확인 | 공개 | 미확인 | [상세](datasets/VoCub.md) |
+| SLURP | 영어 | 실녹음 약 72K + 합성 약 69K 발화, 18 시나리오 | 홈 로봇 비서 명령, 177 화자 | 홈 로봇 음성 명령 SLU | 텍스트 CC BY 4.0 / 오디오 CC BY-NC 4.0 | 공개 (GitHub+Zenodo) | EMNLP 2020 | [상세](datasets/SLURP.md) |
+| Fluent Speech Commands | 영어 | 30,043 발화/97 화자, 약 19시간 | 스마트홈 제어 명령, 16kHz 근접 | 엣지 E2E 의도 인식 | 학술 연구 전용(미확인) | 신청 | Interspeech 2019 | [상세](datasets/Fluent-Speech-Commands.md) |
+| OpenX-Sound | 비해당(오디오) | 미확인 | OXE 궤적+동기화 오디오 | 음향 큐 기반 VSLA 학습 | 미확인 | 공개 (HF) | HEAR (IJRR 2026) | [상세](datasets/OpenX-Sound.md) |
 
 ## 논문 요약
 | 제목 | 저자 | 학회/연도 | 사용 데이터셋 | 핵심 내용 | 링크 |
@@ -44,8 +47,10 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | An analysis of environment, microphone and data simulation mismatches in robust speech recognition | 미확인 | CSL 2017 | CHiME-4 | 불일치가 강건 ASR에 미치는 영향 분석 | [요약](papers/2017-CHiME-4-Mismatch-Analysis.md) |
 | DEMAND database | Thiemann, Ito, Vincent | ICA 2013 | DEMAND | 다양한 환경 다채널 잡음 DB | [요약](papers/2013-DEMAND.md) |
 | RoboOmni | 미확인 | arXiv 2025 | OmniAction | 맥락적 음성 지시 omni-modal 로봇 | [요약](papers/2025-RoboOmni.md) |
-| HEAR | 미확인 | arXiv 2026 | 미확인 | 스트리밍 오디오 sound-centric 조작, Blind Execution Interval | [요약](papers/2026-HEAR.md) |
-| From Instruction to Event: Sound-Triggered Mobile Manipulation | 미확인 | arXiv 2026 | 미확인 | 소리 이벤트 트리거 이동 조작 | [요약](papers/2026-Sound-Triggered-Mobile-Manipulation.md) |
+| HEAR (Vision-Sound-Language-Action) | Nie, Deng, Wang 외 | IJRR 2026 (arXiv) | OpenX-Sound, HEAR-Bench | 스트리밍 오디오 메모리로 Blind Execution Interval 해소 | [요약](papers/2026-HEAR.md) |
+| From Instruction to Event: Sound-Triggered Mobile Manipulation | Ju, Huang 외 | arXiv 2026 | Habitat-Echo, STMM-1.9K | 소리 이벤트 트리거 이동 조작 | [요약](papers/2026-Sound-Triggered-Mobile-Manipulation.md) |
+| SLURP: A Spoken Language Understanding Resource Package | Bastianelli, Vanzo, Swietojanski, Rieser | EMNLP 2020 | SLURP | 홈 로봇 비서 18도메인 SLU 벤치마크, SLU-F1 | [요약](papers/2020-SLURP.md) |
+| Speech Model Pre-training for End-to-End SLU | Lugosch, Ravanelli 외 | Interspeech 2019 | Fluent Speech Commands | 음소·단어 사전학습 E2E 의도 인식 | [요약](papers/2019-Fluent-Speech-Commands-E2E-SLU.md) |
 | Speech enhancement for noise-robust TTS using deep RNNs | Valentini-Botinhao 외 | Interspeech 2016 | VoiceBank-DEMAND(미확인) | RNN 기반 향상 음성으로 TTS 학습 | [요약](papers/2016-VoiceBank-DEMAND-Valentini.md) |
 
 ## Daily 로그
@@ -62,3 +67,4 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 - [2026-11-08](daily/2026-11-08.md)
 - [2026-11-09](daily/2026-11-09.md)
 - [2026-11-10](daily/2026-11-10.md)
+- [2026-11-11](daily/2026-11-11.md)
