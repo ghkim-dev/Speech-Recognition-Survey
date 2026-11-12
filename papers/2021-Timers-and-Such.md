@@ -1,0 +1,11 @@
+# Timers and Such: A Practical Benchmark for Spoken Language Understanding with Numbers
+- **저자**: Loren Lugosch 외 (Mila 등) / NeurIPS 2021 Datasets and Benchmarks Track
+- **문제**: 기존 SLU 벤치마크는 숫자 처리가 거의 없지만, 실제 음성 비서 사용의 상당수(타이머·알람·계산·단위 변환)는 숫자 인식이 핵심
+- **방법**: 숫자 포함 명령 4개 의도의 실·합성 음성 데이터셋 공개(CC0). decoupled(ASR+NLU), multistage, direct(E2E) SLU 모델을 SpeechBrain으로 비교
+- **데이터셋/벤치마크**: [Timers and Such](../datasets/Timers-and-Such.md)
+- **결과** (SpeechBrain 레시피 문장 정확도, 5 seed 평균):
+  - train-real+synth 학습, test-real 기준: Decoupled(LibriSpeech LM) 31.4%, Multistage(T&S LM) 72.6%, Direct 77.5%
+  - 합성 음성만 학습 후 all-real 평가: Direct 68.9%, Multistage(T&S LM) 69.9%
+  - train-real만 학습한 개선 Direct 모델: CRDNN 89.2%, wav2vec 2.0 Base 92.7%, wav2vec 2.0 960h 94.0% (test-real)
+- **Physical AI 시사점**: E2E SLU가 cascade보다 숫자 명령에 강하고, 자기지도 인코더가 큰 이득을 줌. TTS 합성 데이터만으로도 일정 수준 실음성 일반화가 가능해 로봇 명령 데이터 부족 시 대안이 됨
+- **링크**: https://arxiv.org/abs/2104.01604 , https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/34173cb38f07f89ddbebc2ac9128303f-Abstract-round1.html , https://github.com/speechbrain/speechbrain/tree/develop/recipes/timers-and-such

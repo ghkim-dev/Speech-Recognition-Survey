@@ -20,8 +20,7 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | DIRHA-English | 영어 | LDC2018S01 약 85시간 | 다실 아파트, 다수 마이크 | 홈 음성 상호작용 | LDC 조건 미확인 | LDC | ASRU 2015 | [상세](datasets/DIRHA-English.md) |
 | AMI | 영어 | 약 100시간 | 회의, 근접+원거리 마이크 | 다화자 회의·diarization | CC BY 4.0 | 공개 | Carletta et al. 2005 | [상세](datasets/AMI.md) |
 | MChRSR | 영어 | 미확인 | PR2 이동 중 다채널 녹음 | 로봇 ego-noise ASR | 미확인 | 미확인 | 2017 | [상세](datasets/MChRSR.md) |
-| CHiME-3/4 | 영어 | 미확인 | 6채널 태블릿, 카페·거리·버스·보행구역 | 모바일 다채널 잡음 ASR | 미확인(WSJ0 기반) | 미확인 | ASRU 2015 | [상세](datasets/CHiME-3-4.md) |
-| CHiME-4 | 영어 | 학습 약 20시간(실+시뮬), dev/test 각 1,640/1,320 문장 | 태블릿 6채널, 버스·카페·거리 | 모바일 다채널 잡음 ASR | 미확인 | 미확인 | CHiME-4 Challenge | [상세](datasets/CHiME-4.md) |
+| CHiME-3/4 | 영어 | 학습 약 20시간(실 1,600+시뮬 7,138 문장), dev/test 각 1,640/1,320 문장 | 태블릿 6채널, 버스·카페·거리·보행구역 (CHiME-4는 6/2/1채널 트랙) | 모바일 다채널 잡음 ASR | 미확인(WSJ0 기반) | 미확인 | ASRU 2015, CSL 2017 | [상세](datasets/CHiME-3-4.md) |
 | VoiceBank+DEMAND | 영어 | 학습 11,572 발화/28 화자(2차 자료) | VCTK+DEMAND 잡음 병렬 48kHz | 음성 향상 전처리 | 구 레코드 CC BY 4.0, 현행 미확인 | 공개 (Edinburgh) | 미확인 | [상세](datasets/VoiceBank-DEMAND.md) |
 | DEMAND | 비음성(잡음) | 미확인 (16채널, 6개 환경 범주) | 16마이크 어레이 실환경 잡음 | 잡음 강건 ASR·음성 향상 잡음원 | CC BY-SA 3.0 (Zenodo 원본) | 공개 (Zenodo) | Thiemann 외 2013 | [상세](datasets/DEMAND.md) |
 | OmniAction | 영어 추정 | 140k 에피소드, 5k+ 화자 | 맥락적 음성 지시 로봇 조작 | 음성-VLA | 미확인 | 공개 (HF) | RoboOmni (ICLR 2026) | [상세](datasets/OmniAction.md) |
@@ -30,6 +29,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | SLURP | 영어 | 실녹음 약 72K + 합성 약 69K 발화, 18 시나리오 | 홈 로봇 비서 명령, 177 화자 | 홈 로봇 음성 명령 SLU | 텍스트 CC BY 4.0 / 오디오 CC BY-NC 4.0 | 공개 (GitHub+Zenodo) | EMNLP 2020 | [상세](datasets/SLURP.md) |
 | Fluent Speech Commands | 영어 | 30,043 발화/97 화자, 약 19시간 | 스마트홈 제어 명령, 16kHz 근접 | 엣지 E2E 의도 인식 | 학술 연구 전용(미확인) | 신청 | Interspeech 2019 | [상세](datasets/Fluent-Speech-Commands.md) |
 | OpenX-Sound | 비해당(오디오) | 미확인 | OXE 궤적+동기화 오디오 | 음향 큐 기반 VSLA 학습 | 미확인 | 공개 (HF) | HEAR (IJRR 2026) | [상세](datasets/OpenX-Sound.md) |
+| STOP | 영어 | 236,477 오디오, 약 218시간, 885 화자 | TOPv2 질의 낭독, 계층형 의도·슬롯 파스 | 복합 음성 명령 구조적 SLU | 미확인 (LICENSE 링크 접속 불가) | 공개 (Meta) | IEEE SLT 2022 | [상세](datasets/STOP.md) |
+| Timers and Such | 영어 | 실+합성, 약 12.9GB (발화 수 미확인) | 숫자 명령 4개 의도(타이머·알람·계산·단위) | 엣지 음성 비서 숫자 명령 | CC0 (논문 기준) | 공개 (Zenodo) | NeurIPS 2021 D&B | [상세](datasets/Timers-and-Such.md) |
 
 ## 논문 요약
 | 제목 | 저자 | 학회/연도 | 사용 데이터셋 | 핵심 내용 | 링크 |
@@ -44,7 +45,7 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | Single-Channel Robot Ego-Speech Filtering | Li, Hindriks, Kunneman | arXiv 2024 | 자체(Pepper) | 로봇 자기 발화 제거 | [요약](papers/2024-Pepper-Ego-Speech-Filtering.md) |
 | MChRSR | 미확인 | 2017 | MChRSR | 로봇 이동 잡음 ASR | [요약](papers/2017-MChRSR.md) |
 | The third CHiME Challenge | Barker 외 | ASRU 2015 | CHiME-3/4 | 태블릿 다채널 잡음 ASR 챌린지 | [요약](papers/2015-CHiME-3-Challenge.md) |
-| An analysis of environment, microphone and data simulation mismatches in robust speech recognition | 미확인 | CSL 2017 | CHiME-4 | 불일치가 강건 ASR에 미치는 영향 분석 | [요약](papers/2017-CHiME-4-Mismatch-Analysis.md) |
+| An analysis of environment, microphone and data simulation mismatches in robust speech recognition | Vincent, Watanabe 외 | CSL 2017 | CHiME-3/4 | 불일치가 강건 ASR에 미치는 영향 분석 | [요약](papers/2017-CHiME-4-Mismatch-Analysis.md) |
 | DEMAND database | Thiemann, Ito, Vincent | ICA 2013 | DEMAND | 다양한 환경 다채널 잡음 DB | [요약](papers/2013-DEMAND.md) |
 | RoboOmni | 미확인 | arXiv 2025 | OmniAction | 맥락적 음성 지시 omni-modal 로봇 | [요약](papers/2025-RoboOmni.md) |
 | HEAR (Vision-Sound-Language-Action) | Nie, Deng, Wang 외 | IJRR 2026 (arXiv) | OpenX-Sound, HEAR-Bench | 스트리밍 오디오 메모리로 Blind Execution Interval 해소 | [요약](papers/2026-HEAR.md) |
@@ -52,6 +53,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | SLURP: A Spoken Language Understanding Resource Package | Bastianelli, Vanzo, Swietojanski, Rieser | EMNLP 2020 | SLURP | 홈 로봇 비서 18도메인 SLU 벤치마크, SLU-F1 | [요약](papers/2020-SLURP.md) |
 | Speech Model Pre-training for End-to-End SLU | Lugosch, Ravanelli 외 | Interspeech 2019 | Fluent Speech Commands | 음소·단어 사전학습 E2E 의도 인식 | [요약](papers/2019-Fluent-Speech-Commands-E2E-SLU.md) |
 | Speech enhancement for noise-robust TTS using deep RNNs | Valentini-Botinhao 외 | Interspeech 2016 | VoiceBank-DEMAND(미확인) | RNN 기반 향상 음성으로 TTS 학습 | [요약](papers/2016-VoiceBank-DEMAND-Valentini.md) |
+| STOP: A Dataset for Spoken Task Oriented Semantic Parsing | Tomasello 외 (Meta AI) | IEEE SLT 2022 | STOP | 218시간 계층형 SLU 음성 벤치마크, exact match | [요약](papers/2022-STOP.md) |
+| Timers and Such: A Practical Benchmark for SLU with Numbers | Lugosch 외 | NeurIPS 2021 D&B | Timers and Such | 숫자 명령 SLU, Direct E2E가 cascade 대비 우위 | [요약](papers/2021-Timers-and-Such.md) |
 
 ## Daily 로그
 - [2026-10-29](daily/2026-10-29.md)
@@ -68,3 +71,4 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 - [2026-11-09](daily/2026-11-09.md)
 - [2026-11-10](daily/2026-11-10.md)
 - [2026-11-11](daily/2026-11-11.md)
+- [2026-11-12](daily/2026-11-12.md)
