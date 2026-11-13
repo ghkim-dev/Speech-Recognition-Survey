@@ -31,6 +31,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | OpenX-Sound | 비해당(오디오) | 미확인 | OXE 궤적+동기화 오디오 | 음향 큐 기반 VSLA 학습 | 미확인 | 공개 (HF) | HEAR (IJRR 2026) | [상세](datasets/OpenX-Sound.md) |
 | STOP | 영어 | 236,477 오디오, 약 218시간, 885 화자 | TOPv2 질의 낭독, 계층형 의도·슬롯 파스 | 복합 음성 명령 구조적 SLU | 미확인 (LICENSE 링크 접속 불가) | 공개 (Meta) | IEEE SLT 2022 | [상세](datasets/STOP.md) |
 | Timers and Such | 영어 | 실+합성, 약 12.9GB (발화 수 미확인) | 숫자 명령 4개 의도(타이머·알람·계산·단위) | 엣지 음성 비서 숫자 명령 | CC0 (논문 기준) | 공개 (Zenodo) | NeurIPS 2021 D&B | [상세](datasets/Timers-and-Such.md) |
+| EasyCom | 영어 | 약 5시간 18분(오류 포함 6.6시간), 세션 12개 | AR 안경 6채널+1인칭 영상, 레스토랑 잡음, 머리 자세 | 착용형·머리 장착 이동 어레이 음성 향상/ASR | CC BY-NC 4.0 | 공개 (GitHub) | arXiv 2021 | [상세](datasets/EasyCom.md) |
+| SpokenWOZ | 영어 | 5.7k 대화, 203k 턴, 약 249시간, 8 도메인 | 전화 통화 사람 간 과업 지향 대화 | 다중 턴 음성 대화 로봇·비서 | CC BY-NC 4.0 | 공개 (test 비공개) | NeurIPS 2023 D&B | [상세](datasets/SpokenWOZ.md) |
 
 ## 논문 요약
 | 제목 | 저자 | 학회/연도 | 사용 데이터셋 | 핵심 내용 | 링크 |
@@ -55,6 +57,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | Speech enhancement for noise-robust TTS using deep RNNs | Valentini-Botinhao 외 | Interspeech 2016 | VoiceBank-DEMAND(미확인) | RNN 기반 향상 음성으로 TTS 학습 | [요약](papers/2016-VoiceBank-DEMAND-Valentini.md) |
 | STOP: A Dataset for Spoken Task Oriented Semantic Parsing | Tomasello 외 (Meta AI) | IEEE SLT 2022 | STOP | 218시간 계층형 SLU 음성 벤치마크, exact match | [요약](papers/2022-STOP.md) |
 | Timers and Such: A Practical Benchmark for SLU with Numbers | Lugosch 외 | NeurIPS 2021 D&B | Timers and Such | 숫자 명령 SLU, Direct E2E가 cascade 대비 우위 | [요약](papers/2021-Timers-and-Such.md) |
+| EasyCom: An Augmented Reality Dataset to Support Algorithms for Easy Communication in Noisy Environments | Donley, Tourbabin 외 | arXiv 2021 | EasyCom | AR 안경 1인칭 다채널 대화 데이터, 대상 화자 향상 벤치마크 | [요약](papers/2021-EasyCom.md) |
+| SpokenWOZ | Si 외 | NeurIPS 2023 D&B | SpokenWOZ | 249시간 음성 과업 대화, cross-turn·reasoning 슬롯, JGA 25.65% | [요약](papers/2023-SpokenWOZ.md) |
 
 ## Daily 로그
 - [2026-10-29](daily/2026-10-29.md)
@@ -72,3 +76,4 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 - [2026-11-10](daily/2026-11-10.md)
 - [2026-11-11](daily/2026-11-11.md)
 - [2026-11-12](daily/2026-11-12.md)
+- [2026-11-13](daily/2026-11-13.md)

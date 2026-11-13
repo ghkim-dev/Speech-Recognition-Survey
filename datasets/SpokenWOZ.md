@@ -1,0 +1,11 @@
+# SpokenWOZ
+- **언어**: 영어
+- **규모**: 대화 5.7k개, 턴 203k개, 오디오 약 249시간, 8개 도메인. 참가자 250명. 단일 도메인(SNG)과 다중 도메인(MUL) 대화 포함
+- **녹음 환경**: 사람과 사람이 전화 통화로 진행한 과업 지향 대화. 샘플링 레이트·코덱은 미확인(저장소에는 대화 ID 이름의 WAV 파일만 표시)
+- **주석**: 목표(goal), 사용자·시스템 발화, 대화 상태, 대화 행위(dialogue act), 오디오, ASR 전사. 여러 턴에 걸쳐 나뉘어 말하는 cross-turn 슬롯(예: 이메일 철자 부르기)과 추론이 필요한 reasoning 슬롯(산술·시간·의미 추론)을 새로 도입
+- **분할**: train/dev 공개. test(약 1k)는 비공개이며 모델을 제출하면 저자 측이 평가(GitHub 기준)
+- **Physical AI 활용 포인트**: 단발 명령(SLURP, STOP)을 넘어 여러 턴에 걸친 음성 대화로 과업을 완수하는 로봇·음성 비서. ASR 오류와 구어 비유창성이 들어간 상태 추적 평가
+- **라이선스/연구 이용**: CC BY-NC 4.0 (비상업 연구 이용 가능)
+- **접근 방식**: 공개 다운로드 (프로젝트 페이지)
+- **주요 사용 논문**: [SpokenWOZ (Si 외, NeurIPS 2023 D&B)](../papers/2023-SpokenWOZ.md)
+- **출처**: https://spokenwoz.github.io , https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/spokenwoz

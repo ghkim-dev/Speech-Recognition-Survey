@@ -1,0 +1,12 @@
+# EasyCom (Easy Communication AR Dataset)
+- **언어**: 영어
+- **규모**: 오류 없는 데이터 약 5시간 18분(오류 포함 시 약 6.6시간). Main 세트는 세션 1~12, 세션당 약 30분이며 1분 단위로 분할. 프레임 드롭 등 사소한 오류가 있는 세션은 Extra 세트로 따로 제공
+- **녹음 환경**: 약 6m×7m×3m, RT60 645ms인 방. 스피커 10대로 레스토랑 잡음을 약 71 dB SPL로 재생. 세션당 참가자 3~5명이고, 그중 1명이 AR 안경 착용
+  - 안경 6채널 마이크 어레이(안경테 4개 + 양쪽 귀 안 바이노럴 2개), 1920×1080 광시야각(수평 약 120°) 1인칭 영상 20fps
+  - 다른 참가자는 헤드셋 근접 마이크(약 48kHz, 32-bit), Optitrack 6DOF 머리 자세 추적
+- **주석**: 음성 전사, 발화 구간(VAD), 누구에게 말하는지(target-of-speech), 머리·얼굴 바운딩 박스(참가자 ID 연결)
+- **Physical AI 활용 포인트**: 착용형/엣지 기기(AR 안경, 휴머노이드 머리 장착 어레이)의 1인칭 다채널 음성 향상과 ASR. 착용자가 움직이는 동적 상황, 시청각 화자 위치 정보, 칵테일 파티 잡음 속 대상 화자 추출
+- **라이선스/연구 이용**: CC BY-NC 4.0 (GitHub 저장소 기준, 비상업 연구 이용 가능)
+- **접근 방식**: 공개 다운로드 (GitHub 저장소·Releases)
+- **주요 사용 논문**: [EasyCom (Donley 외, arXiv 2021)](../papers/2021-EasyCom.md). 후속으로 IEEE SPS 데이터 챌린지인 SPEAR Challenge에서 사용
+- **출처**: https://github.com/facebookresearch/EasyComDataset , https://arxiv.org/abs/2107.04174
