@@ -1,0 +1,13 @@
+# MMCSG (Multi-Modal Conversations in Smart Glasses)
+- **언어**: 영어
+- **규모**: 녹음 530개, 약 26.3시간. Train 172개(8.5시간), Dev 169개(8.4시간), Eval 189개(9.4시간). 녹음당 약 3분 (챌린지 논문 표 기준, 2차 인용)
+- **녹음 환경**: Project Aria 안경을 쓴 사람과 상대방 1명의 양자 대화. 배경 잡음이 섞인 녹음 포함(잡음 종류·비율은 미확인)
+  - 센서: 7채널 마이크 어레이(48 kHz), IMU(가속도·자이로, 1000 Hz, 오른쪽 안경다리), RGB 카메라. 영상 속 얼굴은 블러 처리
+- **주석**: 단어 단위 타임스탬프가 있는 전사, 화자 라벨(SELF=착용자, OTHER=상대방)
+- **과제**: CHiME-8 Task 3. 양쪽 화자를 스트리밍으로 전사하고 화자를 귀속. 지표는 화자 귀속 오류를 포함한 multitalker WER과, 정확히 인식한 단어당 지연 시간
+- **베이스라인**: 미세조정한 FastConformer 스트리밍 모델. Dev에서 평균 지연 0.15초일 때 SELF/OTHER WER 17.9/24.4%, 0.62초일 때 14.3/20.3% (GitHub README)
+- **Physical AI 활용 포인트**: 착용형/머리 장착 기기의 실시간 대화 ASR. 착용자 자기 발화와 상대 발화를 구분해야 하는 점이 로봇 ego-speech 문제와 비슷하고, IMU를 함께 쓰는 멀티모달 단서 연구 가능
+- **라이선스/연구 이용**: Meta Data License에 따른 연구 목적 이용(라이선스 원문 미확인, 상업 이용 조건 미확인). 베이스라인 코드는 CC BY-NC
+- **접근 방식**: 신청/동의 후 다운로드(Meta 데이터셋 페이지, CHiME-8 Task 3 사이트). Eval은 챌린지 기간에 별도 공개
+- **주요 사용 논문**: [The CHiME-8 MMCSG Challenge (CHiME 2024 Workshop)](../papers/2024-CHiME-8-MMCSG.md), USTC-NERCSLIP 시스템(arXiv 2410.05986), M-BEST-RQ(arXiv 2409.11494)
+- **출처**: https://ai.meta.com/datasets/mmcsg-dataset/ , https://github.com/facebookresearch/MMCSG , https://www.chimechallenge.org/challenges/chime8/task3/data , https://www.isca-archive.org/chime_2024/zmolikova24_chime.pdf

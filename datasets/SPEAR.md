@@ -1,0 +1,18 @@
+# SPEAR (Speech Enhancement for Augmented Reality) Challenge 데이터
+- **언어**: 영어
+- **규모**: 하위 데이터셋 4개(D1~D4). Core Train 압축 크기는 D1 14 GB, D2 20 GB, D3 20 GB, D4 24 GB. Core Dev는 압축 해제 시 약 35 GB. 총 시간은 미확인
+  - 세션 분할: 세션 1~9 Train, 10~12 Dev, 13~15 Eval. 세션마다 1분 단위 구간(최대 약 30개)
+- **녹음 환경/구성**
+  - D1: EasyCom 실녹음 전체(AR 안경 6채널 어레이, 레스토랑 잡음)
+  - D2: D1을 TASCAR로 시뮬레이션해 다시 만든 데이터. 원래의 머리 추적 정보와 발화 구간(VAD) 라벨 유지
+  - D3: D2에서 방 크기·잔향·테이블 위치만 바꾼 시뮬레이션
+  - D4: 무향 깨끗한 발화를 이어 붙인 인공 대화, 변형한 EasyCom 장면, 합성 머리 움직임
+  - 장치 어레이 전달함수(Device ATFs, HDF5) 제공
+- **평가 지표**: SNR, fwSegSNR, STOI, ESTOI, MBSTOI, SAR, ISR, SDR, SI-SDR, HASPI, PESQ, PESQ-NB (spear-tools 기준). 시뮬레이션 데이터(D2~D4)는 깨끗한 기준 신호가 있어 intrusive 지표 계산 가능
+- **베이스라인**: MVDR 빔포머
+- **Physical AI 활용 포인트**: 머리에 장착해 움직이는 마이크 어레이(AR 안경, 휴머노이드 머리)에서 위치 정보를 활용한 대상 화자 향상. 실측(D1)과 시뮬레이션(D2~D4)을 짝지어 sim-to-real 차이를 직접 비교 가능
+- **라이선스/연구 이용**: 미확인. 원 데이터 EasyCom은 CC BY-NC 4.0. SPEAR 데이터 자체의 라이선스는 챌린지 사이트에서 확인하지 못함
+- **접근 방식**: 공개 다운로드(Train/Dev, Azure blob curl 링크가 spear-tools README에 있음). Eval 세트는 주최 측에 요청 필요
+- **주관**: Imperial College London, Meta Reality Labs Research. IEEE SPS Challenges and Data Collection 이니셔티브 승인
+- **주요 사용 논문**: [An Introduction to the SPEAR Challenge (IWAENC 2022)](../papers/2022-SPEAR-Challenge.md), The SPEAR Challenge – Review of Results (Forum Acusticum 2023)
+- **출처**: https://imperialcollegelondon.github.io/spear-challenge , https://github.com/ImperialCollegeLondon/spear-tools , https://dael.euracoustics.org/confs/fa2023/data/articles/000502.pdf

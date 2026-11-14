@@ -33,6 +33,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | Timers and Such | 영어 | 실+합성, 약 12.9GB (발화 수 미확인) | 숫자 명령 4개 의도(타이머·알람·계산·단위) | 엣지 음성 비서 숫자 명령 | CC0 (논문 기준) | 공개 (Zenodo) | NeurIPS 2021 D&B | [상세](datasets/Timers-and-Such.md) |
 | EasyCom | 영어 | 약 5시간 18분(오류 포함 6.6시간), 세션 12개 | AR 안경 6채널+1인칭 영상, 레스토랑 잡음, 머리 자세 | 착용형·머리 장착 이동 어레이 음성 향상/ASR | CC BY-NC 4.0 | 공개 (GitHub) | arXiv 2021 | [상세](datasets/EasyCom.md) |
 | SpokenWOZ | 영어 | 5.7k 대화, 203k 턴, 약 249시간, 8 도메인 | 전화 통화 사람 간 과업 지향 대화 | 다중 턴 음성 대화 로봇·비서 | CC BY-NC 4.0 | 공개 (test 비공개) | NeurIPS 2023 D&B | [상세](datasets/SpokenWOZ.md) |
+| SPEAR | 영어 | D1~D4, Core Train 압축 78 GB, 세션 15개 (총 시간 미확인) | EasyCom 실녹음(D1)+TASCAR 시뮬레이션(D2~D4) | 머리 장착 이동 어레이 향상, sim-to-real 비교 | 미확인(원본 EasyCom은 CC BY-NC 4.0) | 공개 (Eval은 요청) | IWAENC 2022 | [상세](datasets/SPEAR.md) |
+| MMCSG | 영어 | 530 녹음, 약 26.3시간 | Aria 안경 7채널(48kHz)+IMU+영상, 양자 대화 | 착용형 스트리밍 다화자 ASR, 자기/상대 발화 구분 | Meta Data License(연구용, 세부 미확인) | 신청 | CHiME-8 (2024) | [상세](datasets/MMCSG.md) |
 
 ## 논문 요약
 | 제목 | 저자 | 학회/연도 | 사용 데이터셋 | 핵심 내용 | 링크 |
@@ -59,6 +61,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | Timers and Such: A Practical Benchmark for SLU with Numbers | Lugosch 외 | NeurIPS 2021 D&B | Timers and Such | 숫자 명령 SLU, Direct E2E가 cascade 대비 우위 | [요약](papers/2021-Timers-and-Such.md) |
 | EasyCom: An Augmented Reality Dataset to Support Algorithms for Easy Communication in Noisy Environments | Donley, Tourbabin 외 | arXiv 2021 | EasyCom | AR 안경 1인칭 다채널 대화 데이터, 대상 화자 향상 벤치마크 | [요약](papers/2021-EasyCom.md) |
 | SpokenWOZ | Si 외 | NeurIPS 2023 D&B | SpokenWOZ | 249시간 음성 과업 대화, cross-turn·reasoning 슬롯, JGA 25.65% | [요약](papers/2023-SpokenWOZ.md) |
+| An Introduction to the Speech Enhancement for Augmented Reality (SPEAR) Challenge | Guiraud, Hafezi, Naylor 외 | IWAENC 2022 | SPEAR, EasyCom | EasyCom 시뮬레이션 확장 IEEE SPS 챌린지, MVDR 베이스라인 | [요약](papers/2022-SPEAR-Challenge.md) |
+| The CHiME-8 MMCSG Challenge | Žmolíková 외 | CHiME 2024 Workshop | MMCSG | 스마트 안경 스트리밍 다화자 ASR, WER+지연 평가 | [요약](papers/2024-CHiME-8-MMCSG.md) |
 
 ## Daily 로그
 - [2026-10-29](daily/2026-10-29.md)
@@ -77,3 +81,4 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 - [2026-11-11](daily/2026-11-11.md)
 - [2026-11-12](daily/2026-11-12.md)
 - [2026-11-13](daily/2026-11-13.md)
+- [2026-11-14](daily/2026-11-14.md)
