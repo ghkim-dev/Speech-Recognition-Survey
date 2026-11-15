@@ -1,0 +1,13 @@
+# CAVEMOVE (Acoustic data collection for speech enabled technologies in moving vehicles)
+- **언어**: 비해당(음성 미포함). 사용자가 직접 dry speech를 넣어 합성하는 음향 DB
+- **규모**: Zenodo 아카이브(cavemove_dataset.zip) 약 7.6 GB, 최신 v4(2025-10-21). 차량 수는 Zenodo 설명 "4대", 문서 "3대"로 출처마다 다름(미확인). 총 녹음 시간 미확인
+- **녹음 환경**: 실제 승용차 실내
+  - 마이크 구성 2종: (i) 대시보드 운전석·조수석 사이의 소형 원형 8마이크 어레이(반지름 5 cm), (ii) 차 안 분산 마이크 배치
+  - 수록 내용: 정지 상태에서 각 승객 위치(화자 위치)→모든 마이크의 실측 임펄스 응답(Room EQ Wizard), 정지·주행 상태 잡음. 잡음은 속도(km/h)와 창문 개방 조건(차량별 3~4가지)별로 정리. 환기/에어컨 잡음, 차량 오디오(라디오 등) 간섭 성분도 추가 가능
+  - 형식: 16 kHz, 8채널 .wav
+- **도구**: Python API(MATLAB판도 있음)로 음성 성분과 잡음 성분을 따로 받아 사용자가 섞어 마이크 신호를 합성. 음성 성분은 사용자가 준비한 dry speech를 실측 임펄스 응답에 통과시켜 만듦
+- **Physical AI 활용 포인트**: 자율주행·차량 음성 비서의 원거리·다채널 ASR, 음성 향상, 화자 위치 추정(운전자/동승자 구분) 학습 데이터 합성. 속도·창문 조건별 잡음을 제어할 수 있어 주행 조건별 강건성 평가에 적합
+- **라이선스/연구 이용**: API 코드는 MIT. 오디오 데이터 라이선스는 Zenodo 레코드에서 직접 확인하지 못함(미확인). "open access", 무료 다운로드로 안내됨
+- **접근 방식**: 공개 (Zenodo, DOI 10.5281/zenodo.13594242 → 최신 레코드 17404917)
+- **주요 사용 논문**: [CAVEMOVE (arXiv 2508.19691, 2025)](../papers/2025-CAVEMOVE.md)
+- **출처**: https://github.com/SPL-FORTH-ICS/CAVEMOVE , https://zenodo.org/records/17404917 , https://doi.org/10.5281/zenodo.13594242 , https://arxiv.org/abs/2508.19691

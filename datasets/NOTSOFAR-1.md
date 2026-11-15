@@ -1,0 +1,14 @@
+# NOTSOFAR-1 (Natural Office Talkers in Settings Of Far-field Audio Recordings)
+- **언어**: 영어
+- **규모**:
+  - 실녹음 회의(Recorded Meeting Dataset): 회의 237개(평균 약 6분), 회의실 30곳, 회의당 참석자 4~8명, 고유 화자 35명
+  - 공개 서브셋: `240825.1_train`(챌린지 Train-set-1+2), `240825.1_dev1`(Dev-set-1, 화자 12명 중 10명이 학습셋과 겹침), `240629.1_eval_small_with_GT`(챌린지 평가셋과 동일, 회의 80개, 트랙별 약 16시간), `240825.1_eval_full_with_GT`(회의 129개, 다채널 장치 3대·단일 채널 장치 6~7대)
+  - 시뮬레이션 학습셋: 약 1,000시간(200시간 축소판 있음). 실회의 다채널 장치와 같은 마이크 어레이 구조, 실측 음향 전달함수 15,000개 사용
+- **녹음 환경**: 실제 사무실 회의실에서 탁자 위 단일 상용 장치로 원거리 녹음. 단일 채널(SC) 장치와 다채널(MC) 어레이 장치로 트랙 구분. 메타데이터 해시태그로 조건 표시(#NaturalMeeting, #DebateOverlaps, #TransientNoise=high, #TalkNearWhiteboard 등)
+- **과제**: CHiME-8 Task 2. 화자 귀속 원거리 회의 전사(누가 무엇을 말했는지). 주 지표 tcpWER(시간 제약 화자 귀속 WER), 보조 지표 tcORC-WER(화자 무관)
+- **베이스라인**: CSS(연속 음성 분리) → Whisper ASR → NeMo 기반 화자 분할. Dev-set-1 tcpWER/tcORC-WER: 단일 채널 46.8/38.5%(177 세션), 다채널 32.4/26.7%(106 세션). 화이트보드 근처 발화(SC 55.4%, MC 39.9%)와 겹침 많은 토론(SC 54.9%, MC 38.0%)에서 오류가 큼 (GitHub README)
+- **Physical AI 활용 포인트**: 실내에 놓인 단일 기기(스마트 스피커, 회의실 로봇, 가정용 로봇)가 여러 사람의 대화를 원거리에서 듣고 화자별로 전사하는 상황과 같음. 화자가 장치에서 멀어지거나(화이트보드) 겹쳐 말할 때 성능 저하를 조건별로 분석할 수 있음. 실측 전달함수 기반 대규모 시뮬레이션 학습셋은 sim-to-real 학습 연구에도 활용 가능
+- **라이선스/연구 이용**: CC BY 4.0 (GitHub README "Data License" 절). 단, 챌린지 Dev-set-2는 법적·품질 사유로 공개 데이터에서 제외되었고, 챌린지 참가자의 관련 논문에만 사용 가능
+- **접근 방식**: 공개 (Hugging Face `microsoft/NOTSOFAR`, 다운로드에 HF 계정 토큰 필요)
+- **주요 사용 논문**: [NOTSOFAR-1 Challenge (Interspeech 2024)](../papers/2024-NOTSOFAR-1-Challenge.md), Summary of the NOTSOFAR-1 Challenge(arXiv 2501.17304), USTC-NERCSLIP 시스템(arXiv 2409.02041), CHiME-7/8 DASR 리뷰(arXiv 2507.18161)
+- **출처**: https://github.com/microsoft/NOTSOFAR1-Challenge , https://huggingface.co/datasets/microsoft/NOTSOFAR , https://www.chimechallenge.org/challenges/chime8/task2/index , https://www.isca-archive.org/interspeech_2024/vinnikov24_interspeech.pdf

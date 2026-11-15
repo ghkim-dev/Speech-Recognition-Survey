@@ -35,6 +35,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | SpokenWOZ | 영어 | 5.7k 대화, 203k 턴, 약 249시간, 8 도메인 | 전화 통화 사람 간 과업 지향 대화 | 다중 턴 음성 대화 로봇·비서 | CC BY-NC 4.0 | 공개 (test 비공개) | NeurIPS 2023 D&B | [상세](datasets/SpokenWOZ.md) |
 | SPEAR | 영어 | D1~D4, Core Train 압축 78 GB, 세션 15개 (총 시간 미확인) | EasyCom 실녹음(D1)+TASCAR 시뮬레이션(D2~D4) | 머리 장착 이동 어레이 향상, sim-to-real 비교 | 미확인(원본 EasyCom은 CC BY-NC 4.0) | 공개 (Eval은 요청) | IWAENC 2022 | [상세](datasets/SPEAR.md) |
 | MMCSG | 영어 | 530 녹음, 약 26.3시간 | Aria 안경 7채널(48kHz)+IMU+영상, 양자 대화 | 착용형 스트리밍 다화자 ASR, 자기/상대 발화 구분 | Meta Data License(연구용, 세부 미확인) | 신청 | CHiME-8 (2024) | [상세](datasets/MMCSG.md) |
+| NOTSOFAR-1 | 영어 | 실회의 237개(평균 6분, 회의실 30곳, 화자 35명) + 시뮬레이션 약 1,000시간 | 회의실 탁자 위 단일 장치(단일/다채널), 조건 해시태그 | 고정 단일 기기 원거리 다화자 화자 귀속 전사 | CC BY 4.0 (Dev-set-2 제외) | 공개 (HF) | Interspeech 2024 | [상세](datasets/NOTSOFAR-1.md) |
+| CAVEMOVE | 비해당(임펄스 응답·잡음) | Zenodo 약 7.6 GB, 차량 3~4대(출처 불일치) | 승용차 실내, 8마이크 원형 어레이+분산 마이크, 속도·창문 조건별 주행 잡음, 16kHz | 자율주행·차량 음성 비서 데이터 합성 | 데이터 미확인(API 코드 MIT) | 공개 (Zenodo) | arXiv 2025 | [상세](datasets/CAVEMOVE.md) |
 
 ## 논문 요약
 | 제목 | 저자 | 학회/연도 | 사용 데이터셋 | 핵심 내용 | 링크 |
@@ -63,6 +65,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | SpokenWOZ | Si 외 | NeurIPS 2023 D&B | SpokenWOZ | 249시간 음성 과업 대화, cross-turn·reasoning 슬롯, JGA 25.65% | [요약](papers/2023-SpokenWOZ.md) |
 | An Introduction to the Speech Enhancement for Augmented Reality (SPEAR) Challenge | Guiraud, Hafezi, Naylor 외 | IWAENC 2022 | SPEAR, EasyCom | EasyCom 시뮬레이션 확장 IEEE SPS 챌린지, MVDR 베이스라인 | [요약](papers/2022-SPEAR-Challenge.md) |
 | The CHiME-8 MMCSG Challenge | Žmolíková 외 | CHiME 2024 Workshop | MMCSG | 스마트 안경 스트리밍 다화자 ASR, WER+지연 평가 | [요약](papers/2024-CHiME-8-MMCSG.md) |
+| NOTSOFAR-1 Challenge: New Datasets, Baseline, and Tasks for Distant Meeting Transcription | Vinnikov, Ivry 외 (Microsoft) | Interspeech 2024 | NOTSOFAR-1 | 단일 기기 원거리 회의 화자 귀속 전사, tcpWER SC 46.8/MC 32.4% 베이스라인 | [요약](papers/2024-NOTSOFAR-1-Challenge.md) |
+| CAVEMOVE: An Acoustic Database for the Study of Voice-enabled Technologies inside Moving Vehicles | Stefanakis, Symiakakis 외 (FORTH) | arXiv 2025 | CAVEMOVE | 차량 실측 임펄스 응답·주행 잡음 DB와 합성 API | [요약](papers/2025-CAVEMOVE.md) |
 
 ## Daily 로그
 - [2026-10-29](daily/2026-10-29.md)
@@ -82,3 +86,4 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 - [2026-11-12](daily/2026-11-12.md)
 - [2026-11-13](daily/2026-11-13.md)
 - [2026-11-14](daily/2026-11-14.md)
+- [2026-11-15](daily/2026-11-15.md)
