@@ -37,6 +37,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | MMCSG | 영어 | 530 녹음, 약 26.3시간 | Aria 안경 7채널(48kHz)+IMU+영상, 양자 대화 | 착용형 스트리밍 다화자 ASR, 자기/상대 발화 구분 | Meta Data License(연구용, 세부 미확인) | 신청 | CHiME-8 (2024) | [상세](datasets/MMCSG.md) |
 | NOTSOFAR-1 | 영어 | 실회의 237개(평균 6분, 회의실 30곳, 화자 35명) + 시뮬레이션 약 1,000시간 | 회의실 탁자 위 단일 장치(단일/다채널), 조건 해시태그 | 고정 단일 기기 원거리 다화자 화자 귀속 전사 | CC BY 4.0 (Dev-set-2 제외) | 공개 (HF) | Interspeech 2024 | [상세](datasets/NOTSOFAR-1.md) |
 | CAVEMOVE | 비해당(임펄스 응답·잡음) | Zenodo 약 7.6 GB, 차량 3~4대(출처 불일치) | 승용차 실내, 8마이크 원형 어레이+분산 마이크, 속도·창문 조건별 주행 잡음, 16kHz | 자율주행·차량 음성 비서 데이터 합성 | 데이터 미확인(API 코드 MIT) | 공개 (Zenodo) | arXiv 2025 | [상세](datasets/CAVEMOVE.md) |
+| CHiME-7/8 DASR | 영어 | 기존 코퍼스 3~4개 통합(CHiME-6·DiPCo·Mixer 6 + CHiME-8은 NOTSOFAR-1), 총 시간 미확인 | 시나리오마다 장치 수·배열 구조 상이, 배열 무관 단일 시스템 평가 | 다양한 실내 환경·기기 배치로의 원거리 다화자 인식 일반화 | 구성 코퍼스별(CC BY 4.0~LDC 유료) | 혼합 (chime-utils 자동 다운로드 + Mixer 6은 LDC) | CHiME 2023/2024 Workshop | [상세](datasets/CHiME-7-8-DASR.md) |
+| Mixer 6 Speech | 영어 | 화자 594명, LDC2013S03 약 15,863시간(다채널 합산), CHiME-8 전사 서브셋 음성 약 80시간 | LDC 녹음실 인터뷰·낭독·통화, 13개 마이크 동시 녹음 | 마이크 위치·종류 변화에 따른 원거리 인식 | LDC 회원 전용(서브셋 LDC2025S07은 비회원 계약) | LDC | CHiME-7/8 DASR | [상세](datasets/Mixer-6.md) |
 
 ## 논문 요약
 | 제목 | 저자 | 학회/연도 | 사용 데이터셋 | 핵심 내용 | 링크 |
@@ -67,6 +69,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | The CHiME-8 MMCSG Challenge | Žmolíková 외 | CHiME 2024 Workshop | MMCSG | 스마트 안경 스트리밍 다화자 ASR, WER+지연 평가 | [요약](papers/2024-CHiME-8-MMCSG.md) |
 | NOTSOFAR-1 Challenge: New Datasets, Baseline, and Tasks for Distant Meeting Transcription | Vinnikov, Ivry 외 (Microsoft) | Interspeech 2024 | NOTSOFAR-1 | 단일 기기 원거리 회의 화자 귀속 전사, tcpWER SC 46.8/MC 32.4% 베이스라인 | [요약](papers/2024-NOTSOFAR-1-Challenge.md) |
 | CAVEMOVE: An Acoustic Database for the Study of Voice-enabled Technologies inside Moving Vehicles | Stefanakis, Symiakakis 외 (FORTH) | arXiv 2025 | CAVEMOVE | 차량 실측 임펄스 응답·주행 잡음 DB와 합성 API | [요약](papers/2025-CAVEMOVE.md) |
+| The CHiME-7 DASR Challenge: Distant Meeting Transcription with Multiple Devices in Diverse Scenarios | Cornell 외 | CHiME 2023 Workshop (arXiv 2306.13734) | CHiME-6, DiPCo, Mixer 6 | 배열 무관 원거리 화자 분할+ASR, 베이스라인 main eval macro DA-WER 55.3% | [요약](papers/2023-CHiME-7-DASR-Challenge.md) |
+| The CHiME-8 DASR Challenge for Generalizable and Array Agnostic Distant ASR and Diarization | Cornell 외 | CHiME 2024 Workshop (arXiv 2407.16447) | CHiME-6, DiPCo, Mixer 6, NOTSOFAR-1 | 4개 시나리오 tcpWER, 최고 eval macro 19.6%(STCON, 2차 자료) | [요약](papers/2024-CHiME-8-DASR-Challenge.md) |
 
 ## Daily 로그
 - [2026-10-29](daily/2026-10-29.md)
@@ -87,3 +91,4 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 - [2026-11-13](daily/2026-11-13.md)
 - [2026-11-14](daily/2026-11-14.md)
 - [2026-11-15](daily/2026-11-15.md)
+- [2026-11-16](daily/2026-11-16.md)

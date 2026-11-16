@@ -1,0 +1,16 @@
+# CHiME-7/8 DASR (Distant Automatic Speech Recognition, 다중 시나리오 통합 벤치마크)
+- **언어**: 영어
+- **구성**: 새로 녹음한 데이터가 아니라 기존 원거리 코퍼스를 같은 형식(CHiME-6 스타일 JSON, 공통 텍스트 정규화)으로 묶은 벤치마크
+  - CHiME-7 DASR(2023): [CHiME-6](CHiME-6.md)(가정 저녁 식사) + [DiPCo](DiPCo.md)(식탁 대화) + [Mixer 6](Mixer-6.md)(인터뷰·통화, 13마이크)
+  - CHiME-8 DASR(2024, Task 1): 위 3개 + [NOTSOFAR-1](NOTSOFAR-1.md)(사무실 회의) = 4개 시나리오
+- **규모**: 구성 코퍼스 각각의 규모를 따름. 통합 총 시간은 공식 문서에서 확인하지 못함(미확인)
+- **녹음 환경/특징**: 시나리오마다 녹음 장치 수와 마이크 배열 구조가 다름(Kinect 6대, 7마이크 원형 어레이 5대, 방 곳곳의 13개 마이크, 회의실 탁자 위 장치). 시스템은 배열 구조를 모르는 상태(array-agnostic)에서 하나의 시스템으로 모든 시나리오를 처리해야 함
+- **과제**: 분할되지 않은 장시간 녹음에서 화자 분할 + 음성 인식(누가 언제 무엇을 말했는지). 지표는 CHiME-7은 DA-WER(diarization-attributed WER), CHiME-8은 tcpWER(collar 5초)이며, 시나리오별 값의 macro 평균으로 순위 산정
+- **베이스라인**:
+  - CHiME-7: 다채널 화자 분할 → 채널 선택 → GSS(guided source separation) → 자기지도 표현 기반 ASR. Macro DA-WER sub-track(오라클 분할) dev 28.8% / eval 33.4%, main track dev 47.2% / eval 55.3%. 난이도 CHiME-6 > DiPCo > Mixer 6 (2차 자료: 웹 검색 요약, 원 논문 표에서 재확인 필요)
+  - CHiME-8: ESPnet·NeMo 두 베이스라인. NeMo 베이스라인 dev macro tcpWER 약 50.0%(CH6 49.3 / DiPCo 78.9 / MX6 15.8 / NOTSOFAR 56.2, NTT 논문 Table 4 인용값). 공식 표(arXiv 2407.16447 Table 4)는 직접 확인하지 못함
+- **Physical AI 활용 포인트**: 로봇·스마트 기기는 설치 위치와 마이크 배치가 제품마다 다르므로, 특정 배열에 맞춘 시스템 대신 배열 무관 원거리 다화자 인식이 필요함. 가정·인터뷰·회의 등 성격이 다른 실내 환경을 한 시스템으로 평가해 일반화 성능을 볼 수 있는 현재 가장 넓은 영어 공개 벤치마크
+- **라이선스/연구 이용**: 구성 코퍼스별로 다름. CHiME-6(비상업 연구 라이선스, 신청), DiPCo(CDLA-Permissive로 알려짐, 미확인), NOTSOFAR-1(CC BY 4.0), Mixer 6(LDC 유료/회원. CHiME-8용 80시간 서브셋 LDC2025S07은 LDC 비회원 사용자 계약). 통합 벤치마크 자체의 별도 라이선스는 없음
+- **접근 방식**: `chime-utils dgen dasr` 명령으로 CHiME-6·DiPCo·NOTSOFAR-1은 자동 다운로드, Mixer 6은 LDC에서 따로 받아 경로 지정 (chimechallenge/chime-utils README)
+- **주요 사용 논문**: [CHiME-7 DASR Challenge (CHiME 2023 Workshop)](../papers/2023-CHiME-7-DASR-Challenge.md), [CHiME-8 DASR Challenge (CHiME 2024 Workshop)](../papers/2024-CHiME-8-DASR-Challenge.md), USTC-NERCSLIP CHiME-7 시스템(arXiv 2308.14638), NTT CHiME-8 시스템(arXiv 2409.05554), CHiME-7/8 DASR 리뷰(arXiv 2507.18161), MOVER(arXiv 2508.05055)
+- **출처**: https://raw.githubusercontent.com/chimechallenge/chime-utils/main/README.md , https://arxiv.org/abs/2306.13734 , https://arxiv.org/abs/2407.16447 , https://www.chimechallenge.org/challenges/chime8/task1/baseline , https://arxiv.org/abs/2409.05554
