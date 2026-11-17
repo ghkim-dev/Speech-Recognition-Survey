@@ -39,6 +39,9 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | CAVEMOVE | 비해당(임펄스 응답·잡음) | Zenodo 약 7.6 GB, 차량 3~4대(출처 불일치) | 승용차 실내, 8마이크 원형 어레이+분산 마이크, 속도·창문 조건별 주행 잡음, 16kHz | 자율주행·차량 음성 비서 데이터 합성 | 데이터 미확인(API 코드 MIT) | 공개 (Zenodo) | arXiv 2025 | [상세](datasets/CAVEMOVE.md) |
 | CHiME-7/8 DASR | 영어 | 기존 코퍼스 3~4개 통합(CHiME-6·DiPCo·Mixer 6 + CHiME-8은 NOTSOFAR-1), 총 시간 미확인 | 시나리오마다 장치 수·배열 구조 상이, 배열 무관 단일 시스템 평가 | 다양한 실내 환경·기기 배치로의 원거리 다화자 인식 일반화 | 구성 코퍼스별(CC BY 4.0~LDC 유료) | 혼합 (chime-utils 자동 다운로드 + Mixer 6은 LDC) | CHiME 2023/2024 Workshop | [상세](datasets/CHiME-7-8-DASR.md) |
 | Mixer 6 Speech | 영어 | 화자 594명, LDC2013S03 약 15,863시간(다채널 합산), CHiME-8 전사 서브셋 음성 약 80시간 | LDC 녹음실 인터뷰·낭독·통화, 13개 마이크 동시 녹음 | 마이크 위치·종류 변화에 따른 원거리 인식 | LDC 회원 전용(서브셋 LDC2025S07은 비회원 계약) | LDC | CHiME-7/8 DASR | [상세](datasets/Mixer-6.md) |
+| CHiME-9 ECHI | 영어 | 49세션·196화자(세션당 30분+), train 18시간/dev 약 6시간/eval 약 5.4시간 | 카페테리아 잡음 4인 대화, Aria 안경 7채널+보청기 4채널, 머리 추적·근접 기준 신호 | 착용형·로봇의 저지연 대상 화자 추출 전처리 | DUA 서명 후 학술·벤치마크 용도 | 신청 (HF gated) | CHiME-9 (arXiv 2609.26306) | [상세](datasets/CHiME-9-ECHI.md) |
+| Aria Everyday Activities | 영어 추정 | 녹화 143개, 7.5시간+, 실내 5곳 | Aria 1인칭 7채널 오디오+RGB/SLAM·시선·3D 궤적, ASR 전사 | 공간 인식 체화 에이전트 음성(누가 어디서 말했나) | Meta AEA 라이선스(재배포 금지, 상업 별도 문의) | 공개 (동의 후 다운로드) | arXiv 2402.13349 | [상세](datasets/Aria-Everyday-Activities.md) |
+| AVICAR | 영어 | 화자 100명(86명 표기 불일치), 약 59,000 발화 | 주행 차량, 선바이저 8마이크 어레이+카메라 4대, 주행 조건 5종 | 차량 내 다채널 시청각 ASR | 미확인 | 요청 (추정) | Interspeech 2004 | [상세](datasets/AVICAR.md) |
 
 ## 논문 요약
 | 제목 | 저자 | 학회/연도 | 사용 데이터셋 | 핵심 내용 | 링크 |
@@ -71,6 +74,9 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | CAVEMOVE: An Acoustic Database for the Study of Voice-enabled Technologies inside Moving Vehicles | Stefanakis, Symiakakis 외 (FORTH) | arXiv 2025 | CAVEMOVE | 차량 실측 임펄스 응답·주행 잡음 DB와 합성 API | [요약](papers/2025-CAVEMOVE.md) |
 | The CHiME-7 DASR Challenge: Distant Meeting Transcription with Multiple Devices in Diverse Scenarios | Cornell 외 | CHiME 2023 Workshop (arXiv 2306.13734) | CHiME-6, DiPCo, Mixer 6 | 배열 무관 원거리 화자 분할+ASR, 베이스라인 main eval macro DA-WER 55.3% | [요약](papers/2023-CHiME-7-DASR-Challenge.md) |
 | The CHiME-8 DASR Challenge for Generalizable and Array Agnostic Distant ASR and Diarization | Cornell 외 | CHiME 2024 Workshop (arXiv 2407.16447) | CHiME-6, DiPCo, Mixer 6, NOTSOFAR-1 | 4개 시나리오 tcpWER, 최고 eval macro 19.6%(STCON, 2차 자료) | [요약](papers/2024-CHiME-8-DASR-Challenge.md) |
+| CHiME-9 ECHI: A Machine Learning Challenge for Enhancing Conversations to Address Hearing Impairment | Sutherland, Goetze, Barker 외 | arXiv 2026 (CHiME-9) | CHiME-9 ECHI | 보청기·Aria 저지연 대상 화자 추출, 인과적 TF-GridNet 베이스라인, 객관 지표와 청취 평가 괴리 | [요약](papers/2026-CHiME-9-ECHI.md) |
+| Aria Everyday Activities Dataset | Lv, Charron, Moulon 외 (Meta) | arXiv 2024 | Aria Everyday Activities | 1인칭 다중 센서+3D 공간 정보+음성 전사 공개 | [요약](papers/2024-Aria-Everyday-Activities.md) |
+| AVICAR: Audio-Visual Speech Corpus in a Car Environment | Lee, Hasegawa-Johnson 외 | Interspeech 2004 | AVICAR | 차량 내 8마이크+카메라 4대 시청각 코퍼스 | [요약](papers/2004-AVICAR.md) |
 
 ## Daily 로그
 - [2026-10-29](daily/2026-10-29.md)
@@ -92,3 +98,4 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 - [2026-11-14](daily/2026-11-14.md)
 - [2026-11-15](daily/2026-11-15.md)
 - [2026-11-16](daily/2026-11-16.md)
+- [2026-11-17](daily/2026-11-17.md)
