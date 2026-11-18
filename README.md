@@ -42,6 +42,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | CHiME-9 ECHI | 영어 | 49세션·196화자(세션당 30분+), train 18시간/dev 약 6시간/eval 약 5.4시간 | 카페테리아 잡음 4인 대화, Aria 안경 7채널+보청기 4채널, 머리 추적·근접 기준 신호 | 착용형·로봇의 저지연 대상 화자 추출 전처리 | DUA 서명 후 학술·벤치마크 용도 | 신청 (HF gated) | CHiME-9 (arXiv 2609.26306) | [상세](datasets/CHiME-9-ECHI.md) |
 | Aria Everyday Activities | 영어 추정 | 녹화 143개, 7.5시간+, 실내 5곳 | Aria 1인칭 7채널 오디오+RGB/SLAM·시선·3D 궤적, ASR 전사 | 공간 인식 체화 에이전트 음성(누가 어디서 말했나) | Meta AEA 라이선스(재배포 금지, 상업 별도 문의) | 공개 (동의 후 다운로드) | arXiv 2402.13349 | [상세](datasets/Aria-Everyday-Activities.md) |
 | AVICAR | 영어 | 화자 100명(86명 표기 불일치), 약 59,000 발화 | 주행 차량, 선바이저 8마이크 어레이+카메라 4대, 주행 조건 5종 | 차량 내 다채널 시청각 ASR | 미확인 | 요청 (추정) | Interspeech 2004 | [상세](datasets/AVICAR.md) |
+| CHiME-9 MCoRec | 영어 | 150세션(train 5.6/dev 2.5/eval 6.9시간), 세션당 최대 8화자·4개 동시 대화 | 방 중앙 360° 카메라 영상+내장 마이크 1채널, 겹침 최대 100%, 학습셋만 라펠 근접 음성 | 로봇의 시청각 ASR과 대화 그룹(누가 누구와) 파악 | CHiME 연구 목적(상업은 저자 문의, 원문 미확인) | 신청 (HF gated) | CHiME-9 (arXiv 2510.23276) | [상세](datasets/CHiME-9-MCoRec.md) |
+| Ego4D AVD / Talking-to-Me | 영어 위주(구성 미확인) | AVD 주석 약 50시간(5분 클립 572개), 클립당 화자 4.71명 | 1인칭 착용 카메라 일상 대화, 위치·능동 화자·분할·전사 4과제 + 청자 판단(TTM) | 로봇 1인칭 화자 분할·전사, "나에게 하는 말인가" 판단 | Ego4D 라이선스(비상업 여부 자료 상충, 미확인) | 신청 (라이선스 동의 후 CLI) | CVPR 2022 | [상세](datasets/Ego4D-AVD.md) |
 
 ## 논문 요약
 | 제목 | 저자 | 학회/연도 | 사용 데이터셋 | 핵심 내용 | 링크 |
@@ -77,6 +79,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | CHiME-9 ECHI: A Machine Learning Challenge for Enhancing Conversations to Address Hearing Impairment | Sutherland, Goetze, Barker 외 | arXiv 2026 (CHiME-9) | CHiME-9 ECHI | 보청기·Aria 저지연 대상 화자 추출, 인과적 TF-GridNet 베이스라인, 객관 지표와 청취 평가 괴리 | [요약](papers/2026-CHiME-9-ECHI.md) |
 | Aria Everyday Activities Dataset | Lv, Charron, Moulon 외 (Meta) | arXiv 2024 | Aria Everyday Activities | 1인칭 다중 센서+3D 공간 정보+음성 전사 공개 | [요약](papers/2024-Aria-Everyday-Activities.md) |
 | AVICAR: Audio-Visual Speech Corpus in a Car Environment | Lee, Hasegawa-Johnson 외 | Interspeech 2004 | AVICAR | 차량 내 8마이크+카메라 4대 시청각 코퍼스 | [요약](papers/2004-AVICAR.md) |
+| A Cocktail-Party Benchmark: Multi-Modal dataset and Comparative Evaluation Results | Nguyen 외 (KIT, CMU, Meta AI) | arXiv 2025 (CHiME-9) | CHiME-9 MCoRec | 동시 다중 대화 시청각 전사+대화 클러스터링, 오디오만 WER>100%, 최고 Joint 0.3548 | [요약](papers/2025-MCoRec-Cocktail-Party-Benchmark.md) |
+| Ego4D: Around the World in 3,000 Hours of Egocentric Video | Grauman 외 (Meta AI 컨소시엄) | CVPR 2022 | Ego4D AVD / Social | 1인칭 영상 3,670시간·AVD/TTM 벤치마크, 전사 WER 112→56(챌린지) | [요약](papers/2022-Ego4D.md) |
 
 ## Daily 로그
 - [2026-10-29](daily/2026-10-29.md)
@@ -99,3 +103,4 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 - [2026-11-15](daily/2026-11-15.md)
 - [2026-11-16](daily/2026-11-16.md)
 - [2026-11-17](daily/2026-11-17.md)
+- [2026-11-18](daily/2026-11-18.md)

@@ -1,0 +1,11 @@
+# CHiME-9 MCoRec (Multi-Modal Context-aware Recognition)
+- **언어**: 영어 (일상 주제의 대본 없는 자연 대화)
+- **규모**: 150개 세션(세션당 약 6분). train 56세션·120대화·5.6시간·화자 20명, dev 25세션·60대화·2.5시간·화자 12명, eval 69세션·157대화·6.9시간·화자 24명. 분할 간 화자 겹침 없음 (공식 baseline `docs/data.md`)
+- **녹음 환경**: 한 방에서 최대 4개의 별도 대화가 동시에 진행(대화당 2~4명, 세션당 최대 8명 발화). 방 중앙의 360° 카메라 1대(4K·25fps)와 그 카메라 내장 마이크 1채널(16kHz)만 평가 입력으로 제공되어 혼합 음성의 겹침 비율이 최대 100%. 학습 세트에 한해 화자별 스마트폰 정면 영상 + 라펠 근접 마이크 음성 추가 제공. 화자별 얼굴 트랙(224×224 크롭, bbox)과 화자별 VTT 전사, 화자→대화 클러스터 라벨 포함. 얼굴은 블러 처리하지 않음
+- **Physical AI 활용 포인트**: 로봇·스마트 디바이스가 방 가운데서 "누가, 언제, 무엇을, 누구와" 말하는지 파악하는 문제를 그대로 옮긴 설정. 단일 채널 오디오만으로는 WER이 100%를 넘고 입술 영상(AVSR)을 쓰면 크게 개선되어, 카메라를 가진 로봇의 시청각 ASR과 대화 그룹 파악(자신에게 말을 거는 그룹 식별)에 직접 연결됨
+- **라이선스/연구 이용**: Hugging Face 접근 요청 후 사용. CHiME 연구 목적 라이선스, 상업 이용은 저자 문의 필요(2차 자료 기준, 원문 미확인). 발표·출판물에 화자 얼굴을 노출하려면 저자 허락 필요
+- **접근 방식**: 신청 (Hugging Face gated, `MCoRecChallenge/MCoRec`)
+- **평가 지표**: 화자별 WER, 대화 클러스터링 pairwise F1, 주 지표 Joint ASR-Clustering Error Rate = 0.5×화자 WER + 0.5×(1 − 화자별 클러스터링 F1)
+- **베이스라인(dev)**: 시간 기반 대화 클러스터링 F1 0.8153 공통. AV-HuBERT CTC/Attention(MCoRec 미세조정) 화자 WER 0.4990, Joint 0.3548로 최고. 미세조정 전 0.5536/0.3821, MuAViC-EN 0.7180/0.4643, Auto-AVSR 0.8315/0.5211
+- **주요 사용 논문**: [A Cocktail-Party Benchmark: Multi-Modal dataset and Comparative Evaluation Results](../papers/2025-MCoRec-Cocktail-Party-Benchmark.md) (arXiv 2510.23276)
+- **출처**: https://github.com/MCoRec/mcorec_baseline , https://raw.githubusercontent.com/MCoRec/mcorec_baseline/main/docs/data.md , https://huggingface.co/datasets/MCoRecChallenge/MCoRec , https://www.chimechallenge.org/current/task1/index , https://arxiv.org/abs/2510.23276
