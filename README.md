@@ -44,6 +44,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | AVICAR | 영어 | 화자 100명(86명 표기 불일치), 약 59,000 발화 | 주행 차량, 선바이저 8마이크 어레이+카메라 4대, 주행 조건 5종 | 차량 내 다채널 시청각 ASR | 미확인 | 요청 (추정) | Interspeech 2004 | [상세](datasets/AVICAR.md) |
 | CHiME-9 MCoRec | 영어 | 150세션(train 5.6/dev 2.5/eval 6.9시간), 세션당 최대 8화자·4개 동시 대화 | 방 중앙 360° 카메라 영상+내장 마이크 1채널, 겹침 최대 100%, 학습셋만 라펠 근접 음성 | 로봇의 시청각 ASR과 대화 그룹(누가 누구와) 파악 | CHiME 연구 목적(상업은 저자 문의, 원문 미확인) | 신청 (HF gated) | CHiME-9 (arXiv 2510.23276) | [상세](datasets/CHiME-9-MCoRec.md) |
 | Ego4D AVD / Talking-to-Me | 영어 위주(구성 미확인) | AVD 주석 약 50시간(5분 클립 572개), 클립당 화자 4.71명 | 1인칭 착용 카메라 일상 대화, 위치·능동 화자·분할·전사 4과제 + 청자 판단(TTM) | 로봇 1인칭 화자 분할·전사, "나에게 하는 말인가" 판단 | Ego4D 라이선스(비상업 여부 자료 상충, 미확인) | 신청 (라이선스 동의 후 CLI) | CVPR 2022 | [상세](datasets/Ego4D-AVD.md) |
+| Ego-Exo4D (오디오·음성 자원) | 영어 위주(구성 미확인) | V2 테이크 5,035개·영상 1,286시간(1인칭 221시간), take_audio 약 1,057 GB, 전문가 해설 녹음 117,812개 | 숙련 활동(요리·수리·스포츠) 중 Aria 7채널 1인칭 음성, Narrate & Act 자기 설명, 전문가 음성 해설, Whisper 자동 전사 | 작업 잡음 속 음성 지시와 3D 손·몸 동작 정렬, 음성 피드백 학습 | Ego-Exo4D 라이선스(무료, 상업 범위 원문 미확인) | 신청 (lab22.ai 동의 후 CLI) | CVPR 2024 | [상세](datasets/Ego-Exo4D-Audio.md) |
+| NatSGLD | 영어 | 명령 1,143개·참가자 18명, 활동 11종 | WoZ 시뮬레이션 로봇(Baxter) 주방 과제, 자연 음성+제스처, 44kHz 오디오 포함 영상, LTL 정답·시연 궤적 | 음성+제스처 로봇 명령의 형식적 과제 해석(LTL) | MIT | 공개 (GitHub+프로젝트 사이트) | ACM/IEEE HRI 2025 | [상세](datasets/NatSGLD.md) |
 
 ## 논문 요약
 | 제목 | 저자 | 학회/연도 | 사용 데이터셋 | 핵심 내용 | 링크 |
@@ -81,6 +83,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | AVICAR: Audio-Visual Speech Corpus in a Car Environment | Lee, Hasegawa-Johnson 외 | Interspeech 2004 | AVICAR | 차량 내 8마이크+카메라 4대 시청각 코퍼스 | [요약](papers/2004-AVICAR.md) |
 | A Cocktail-Party Benchmark: Multi-Modal dataset and Comparative Evaluation Results | Nguyen 외 (KIT, CMU, Meta AI) | arXiv 2025 (CHiME-9) | CHiME-9 MCoRec | 동시 다중 대화 시청각 전사+대화 클러스터링, 오디오만 WER>100%, 최고 Joint 0.3548 | [요약](papers/2025-MCoRec-Cocktail-Party-Benchmark.md) |
 | Ego4D: Around the World in 3,000 Hours of Egocentric Video | Grauman 외 (Meta AI 컨소시엄) | CVPR 2022 | Ego4D AVD / Social | 1인칭 영상 3,670시간·AVD/TTM 벤치마크, 전사 WER 112→56(챌린지) | [요약](papers/2022-Ego4D.md) |
+| Ego-Exo4D: Understanding Skilled Human Activity from First- and Third-Person Perspectives | Grauman 외 (Meta FAIR 컨소시엄) | CVPR 2024 | Ego-Exo4D | 1인칭+3인칭 숙련 활동, Aria 7채널 오디오·내레이션·전문가 음성 해설, ASR 벤치마크는 없음 | [요약](papers/2024-Ego-Exo4D.md) |
+| NatSGLD: A Dataset with Speech, Gesture, Logic, and Demonstration for Robot Learning in Natural HRI | Shrestha, Zha 외 (UMD) | ACM/IEEE HRI 2025 | NatSGLD | WoZ 자연 음성·제스처 로봇 명령 + LTL 정답 + 시연, MIT 공개 | [요약](papers/2025-NatSGLD.md) |
 
 ## Daily 로그
 - [2026-10-29](daily/2026-10-29.md)
@@ -104,3 +108,4 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 - [2026-11-16](daily/2026-11-16.md)
 - [2026-11-17](daily/2026-11-17.md)
 - [2026-11-18](daily/2026-11-18.md)
+- [2026-11-19](daily/2026-11-19.md)

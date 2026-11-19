@@ -1,0 +1,14 @@
+# Ego-Exo4D (오디오·음성 언어 자원)
+- **언어**: 영어 위주(전사·주석 기준). 13개 도시·12개 기관 참가자 800명 이상이라 다국어 발화가 섞였을 수 있으며 언어 구성 비율은 미확인
+- **규모**: V2 기준 테이크 5,035개, 영상 총 1,286.30시간(1인칭 Aria 221.26시간), 분할 train 3,072 / val 842 / test 1,121 테이크. 음성 관련 파트: `take_audio`(Aria 1인칭 오디오 추출본) 약 1,056.9 GB, `take_transcription` 약 0.094 GB, `expert_commentary`(전문가 해설 녹음) 약 42.3 GB. Narrate & Act 테이크 456개. 전문가 해설 11,689건, 테이크 3,055개, 오디오 녹음 117,812개, 전문가 50명 (공식 docs changelog)
+- **녹음 환경**: 요리·자전거 수리·의료(절차형)와 축구·농구·춤·볼더링·음악(신체형) 숙련 활동. 착용자는 Aria 안경(마이크 7개, RGB, SLAM 카메라 2개, IMU 2개, 시선) 착용, 주변에 GoPro 4~5대(스테레오 48kHz AAC). Aria 오디오는 VRS 내 7채널
+- **음성 자원 3종**:
+  - Narrate & Act: 착용자가 작업을 하면서 "왜·어떻게" 하는지 직접 말함 → 1인칭 근접 마이크(안경) 자기 발화 + 작업 잡음
+  - Expert Commentary: 코치·요리사 등 전문가가 영상을 멈추고 녹음한 음성 해설(원 오디오 webm + Whisper 전사 + 화면 드로잉 + 숙련도 1~10점)
+  - 테이크 전사: 전 테이크의 Aria 오디오를 Whisper large-v3로 자동 전사(단어 타임스탬프 포함). 사람 검수 전사가 아니므로 ASR 정답(reference)으로 쓰려면 주의
+- **Physical AI 활용 포인트**: 조작·작업 잡음(칼질, 공구, 공 튀기는 소리)이 섞인 1인칭 7채널 음성과 3D 궤적·시선·손 자세가 동기화되어, 작업 중인 사람이 말하는 지시·설명을 로봇이 인식하고 행동과 정렬하는 연구(음성-행동 정렬, 작업 중 자기 발화 인식)에 사용 가능. 전문가 해설은 "잘했는가/왜" 수준의 음성 피드백 → 로봇 학습용 음성 교정 신호 후보
+- **라이선스/연구 이용**: lab22.ai에서 라이선스 동의(개인 또는 기관 서명) 후 약 48시간 내 AWS 자격 증명(14일 유효) 발급. 공식 docs는 "연구 목적 및 상업 이용, 재배포 제한 등을 다룬다", 비용 없음이라고만 설명하여 상업 이용 허용 범위는 원문 미확인
+- **접근 방식**: 신청 (라이선스 동의 후 `egoexo` CLI, `--parts take_audio take_transcription expert_commentary annotations`)
+- **주의**: 전문가 해설 test 분할은 숙련도 추정 벤치마크 때문에 비공개. 테이크 전사는 기계 전사(Whisper)라 WER 평가 기준으로 쓰기 어려움 — 공식 ASR 벤치마크는 없음
+- **주요 사용 논문**: [Ego-Exo4D: Understanding Skilled Human Activity from First- and Third-Person Perspectives](../papers/2024-Ego-Exo4D.md) (CVPR 2024)
+- **출처**: https://raw.githubusercontent.com/EGO4D/ego-exo4d-docs/main/docs/intro.md , https://raw.githubusercontent.com/EGO4D/ego-exo4d-docs/main/docs/overview.md , https://raw.githubusercontent.com/EGO4D/ego-exo4d-docs/main/docs/changelog.md , https://raw.githubusercontent.com/EGO4D/ego-exo4d-docs/main/docs/download.md , https://raw.githubusercontent.com/EGO4D/ego-exo4d-docs/main/docs/getting-started.md , https://raw.githubusercontent.com/EGO4D/ego-exo4d-docs/main/docs/annotations/expert_commentary.md , https://raw.githubusercontent.com/facebookresearch/Ego4d/main/ego4d/egoexo/scripts/extract_audio_transcribe.py , https://arxiv.org/abs/2311.18259
