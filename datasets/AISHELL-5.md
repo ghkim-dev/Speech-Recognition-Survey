@@ -1,0 +1,11 @@
+# AISHELL-5 (차량 내 다채널 다화자 음성)
+- **언어**: 중국어(표준어) — 영어 우선 기준의 **비영어 보조 항목**. 차량 내 다채널·다화자 공개 데이터 중 규모·조건 다양성이 가장 커서 비교 기준으로 수록
+- **규모**: 100시간 이상. Train 94.75시간(568세션, 화자 147명), Dev 3.33시간, Eval1 3.30시간, Eval2 3.58시간(각 6명, arXiv 통계표 2차 인용). OpenSLR 소개는 참가자 165명으로 적혀 있어 자료 간 화자 수 불일치. 별도 실녹음 차량 잡음 약 40시간 제공. 압축 크기: train 54G, dev 1.9G, eval1 1.7G, eval2 1.8G, noise 13G (OpenSLR)
+- **녹음 환경**: 전기차(Li Auto) 실주행, 60개 이상 주행 시나리오. 원거리 4채널(DX01~04) + 화자별 근접 헤드셋(DA*, 학습/검증만) + 차량 스피커 재생 시 AEC용 2채널 참조 신호(DX05~06). 조건: 창문(운전석 창 1/3·1/2, 선루프 1/2, 전부 닫힘) × 주행 속도(정지, 0~40/0~60, 40~80, 80~120 km/h) × 에어컨(끔/중/강) × 차량 오디오(끔/중) × 주간/야간 (GitHub README 시나리오 표)
+- **주석**: TextGrid로 화자·시각·전사. Eval1은 정답 시각 제공(화자 분할 제외 ASR), Eval2는 시각 없이 화자 분할+인식(cpCER)
+- **Physical AI 활용 포인트**: 자율주행·차량 음성 비서에서 운전자·동승자 겹침 발화, 속도·창문·에어컨·음악 잡음, 에코 제거(AEC)까지 한 번에 다룸. 영어 차량 데이터(AVICAR 2004, CAVEMOVE IR·잡음)는 실주행 다화자 대화 전사가 없어, 파이프라인 구조(AEC → 분리 → VAD → ASR) 검증과 잡음 셋을 이용한 영어 음성 합성 증강에 참고 가능
+- **베이스라인(README)**: Eval1 CER — E-Branchformer 26.05%, Paraformer 미세조정 16.65%, Whisper-Small 50.69%, Qwen2-Audio 29.92%. Eval2(cpCER) — 프런트엔드를 AEC+IVA에서 SpatialNet으로 바꾸면 Paraformer 미세조정 66.68% → 47.18%로 개선. 실차 다화자 환경은 여전히 어려움
+- **라이선스/연구 이용**: 데이터 CC BY-SA 4.0 (OpenSLR 표기, 검색 결과 기준 — 이번 세션 openslr.org 직접 접속 불가), 베이스라인 코드 Apache 2.0 (GitHub LICENSE 확인). 상업 이용은 SA 조건 하에 가능
+- **접근 방식**: 공개 (OpenSLR SLR159, EU/중국 미러)
+- **주요 사용 논문**: [AISHELL-5 (Interspeech 2025)](../papers/2025-AISHELL-5.md)
+- **출처**: https://raw.githubusercontent.com/DaiYvhang/AISHELL-5/main/README.md , https://openslr.org/159/ , https://arxiv.org/abs/2505.23036

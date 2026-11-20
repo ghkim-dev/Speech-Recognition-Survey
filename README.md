@@ -46,6 +46,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | Ego4D AVD / Talking-to-Me | 영어 위주(구성 미확인) | AVD 주석 약 50시간(5분 클립 572개), 클립당 화자 4.71명 | 1인칭 착용 카메라 일상 대화, 위치·능동 화자·분할·전사 4과제 + 청자 판단(TTM) | 로봇 1인칭 화자 분할·전사, "나에게 하는 말인가" 판단 | Ego4D 라이선스(비상업 여부 자료 상충, 미확인) | 신청 (라이선스 동의 후 CLI) | CVPR 2022 | [상세](datasets/Ego4D-AVD.md) |
 | Ego-Exo4D (오디오·음성 자원) | 영어 위주(구성 미확인) | V2 테이크 5,035개·영상 1,286시간(1인칭 221시간), take_audio 약 1,057 GB, 전문가 해설 녹음 117,812개 | 숙련 활동(요리·수리·스포츠) 중 Aria 7채널 1인칭 음성, Narrate & Act 자기 설명, 전문가 음성 해설, Whisper 자동 전사 | 작업 잡음 속 음성 지시와 3D 손·몸 동작 정렬, 음성 피드백 학습 | Ego-Exo4D 라이선스(무료, 상업 범위 원문 미확인) | 신청 (lab22.ai 동의 후 CLI) | CVPR 2024 | [상세](datasets/Ego-Exo4D-Audio.md) |
 | NatSGLD | 영어 | 명령 1,143개·참가자 18명, 활동 11종 | WoZ 시뮬레이션 로봇(Baxter) 주방 과제, 자연 음성+제스처, 44kHz 오디오 포함 영상, LTL 정답·시연 궤적 | 음성+제스처 로봇 명령의 형식적 과제 해석(LTL) | MIT | 공개 (GitHub+프로젝트 사이트) | ACM/IEEE HRI 2025 | [상세](datasets/NatSGLD.md) |
+| NatSGD | 영어 | 명령 1,143개·참가자 18명(NatSGLD와 동일 명령) | WoZ 시뮬레이션 주방 로봇, 자연 음성+제스처, 전문가 시연 궤적 | 음성+제스처 조건 모방학습, 명령→LTL(Comm2LTL) | 코드 MIT, 데이터 미확인 | 공개 (프로젝트 사이트) | arXiv 2024 | [상세](datasets/NatSGD.md) |
+| AISHELL-5 (비영어 보조) | 중국어 | 100시간+ (train 94.75h/568세션, dev·eval1·eval2 각 약 3.3~3.6h) + 차량 잡음 40시간 | 전기차 실주행 60+ 조건(속도·창문·에어컨·음악), 원거리 4채널+근접 헤드셋+AEC 참조 2채널 | 차량 음성 비서의 겹침 발화 분할·인식, AEC·분리 프런트엔드 | CC BY-SA 4.0 (코드 Apache 2.0) | 공개 (OpenSLR 159) | Interspeech 2025 | [상세](datasets/AISHELL-5.md) |
 
 ## 논문 요약
 | 제목 | 저자 | 학회/연도 | 사용 데이터셋 | 핵심 내용 | 링크 |
@@ -85,6 +87,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | Ego4D: Around the World in 3,000 Hours of Egocentric Video | Grauman 외 (Meta AI 컨소시엄) | CVPR 2022 | Ego4D AVD / Social | 1인칭 영상 3,670시간·AVD/TTM 벤치마크, 전사 WER 112→56(챌린지) | [요약](papers/2022-Ego4D.md) |
 | Ego-Exo4D: Understanding Skilled Human Activity from First- and Third-Person Perspectives | Grauman 외 (Meta FAIR 컨소시엄) | CVPR 2024 | Ego-Exo4D | 1인칭+3인칭 숙련 활동, Aria 7채널 오디오·내레이션·전문가 음성 해설, ASR 벤치마크는 없음 | [요약](papers/2024-Ego-Exo4D.md) |
 | NatSGLD: A Dataset with Speech, Gesture, Logic, and Demonstration for Robot Learning in Natural HRI | Shrestha, Zha 외 (UMD) | ACM/IEEE HRI 2025 | NatSGLD | WoZ 자연 음성·제스처 로봇 명령 + LTL 정답 + 시연, MIT 공개 | [요약](papers/2025-NatSGLD.md) |
+| NatSGD: A Dataset with Speech, Gestures, and Demonstrations for Robot Learning in Natural HRI | Shrestha 외 (UMD) | arXiv 2024 | NatSGD | 음성+제스처 명령·시연, Comm2LTL Spot Score 음성만 0.434 → 결합 0.588(BART) | [요약](papers/2024-NatSGD.md) |
+| AISHELL-5: The First Open-Source In-Car Multi-Channel Multi-Speaker Speech Dataset | Dai, Xie, Bu 외 (NWPU, AISHELL, Li Auto) | Interspeech 2025 | AISHELL-5 | 실차 다채널 다화자 공개, Eval1 CER 최저 16.65%, 분리 프런트엔드가 Eval2 cpCER 약 20포인트 좌우 | [요약](papers/2025-AISHELL-5.md) |
 
 ## Daily 로그
 - [2026-10-29](daily/2026-10-29.md)
@@ -109,3 +113,4 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 - [2026-11-17](daily/2026-11-17.md)
 - [2026-11-18](daily/2026-11-18.md)
 - [2026-11-19](daily/2026-11-19.md)
+- [2026-11-20](daily/2026-11-20.md)
