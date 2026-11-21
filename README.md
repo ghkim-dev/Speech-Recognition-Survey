@@ -48,6 +48,7 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | NatSGLD | 영어 | 명령 1,143개·참가자 18명, 활동 11종 | WoZ 시뮬레이션 로봇(Baxter) 주방 과제, 자연 음성+제스처, 44kHz 오디오 포함 영상, LTL 정답·시연 궤적 | 음성+제스처 로봇 명령의 형식적 과제 해석(LTL) | MIT | 공개 (GitHub+프로젝트 사이트) | ACM/IEEE HRI 2025 | [상세](datasets/NatSGLD.md) |
 | NatSGD | 영어 | 명령 1,143개·참가자 18명(NatSGLD와 동일 명령) | WoZ 시뮬레이션 주방 로봇, 자연 음성+제스처, 전문가 시연 궤적 | 음성+제스처 조건 모방학습, 명령→LTL(Comm2LTL) | 코드 MIT, 데이터 미확인 | 공개 (프로젝트 사이트) | arXiv 2024 | [상세](datasets/NatSGD.md) |
 | AISHELL-5 (비영어 보조) | 중국어 | 100시간+ (train 94.75h/568세션, dev·eval1·eval2 각 약 3.3~3.6h) + 차량 잡음 40시간 | 전기차 실주행 60+ 조건(속도·창문·에어컨·음악), 원거리 4채널+근접 헤드셋+AEC 참조 2채널 | 차량 음성 비서의 겹침 발화 분할·인식, AEC·분리 프런트엔드 | CC BY-SA 4.0 (코드 Apache 2.0) | 공개 (OpenSLR 159) | Interspeech 2025 | [상세](datasets/AISHELL-5.md) |
+| SynTTS-Commands | 영어+중국어 | 384,621개·111.33시간(영어 23클래스 183,076개·46.5시간) | CosyVoice 2 TTS 합성, VoxCeleb·Free ST 화자 음색 복제, 미디어 제어·웨이크워드 명령 | 엣지·차량·로봇 KWS의 합성 사전학습+소량 실녹음 적응 | 코드 MIT, 데이터 미확인 | 공개 (Hugging Face) | arXiv 2025 | [상세](datasets/SynTTS-Commands.md) |
 
 ## 논문 요약
 | 제목 | 저자 | 학회/연도 | 사용 데이터셋 | 핵심 내용 | 링크 |
@@ -89,6 +90,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | NatSGLD: A Dataset with Speech, Gesture, Logic, and Demonstration for Robot Learning in Natural HRI | Shrestha, Zha 외 (UMD) | ACM/IEEE HRI 2025 | NatSGLD | WoZ 자연 음성·제스처 로봇 명령 + LTL 정답 + 시연, MIT 공개 | [요약](papers/2025-NatSGLD.md) |
 | NatSGD: A Dataset with Speech, Gestures, and Demonstrations for Robot Learning in Natural HRI | Shrestha 외 (UMD) | arXiv 2024 | NatSGD | 음성+제스처 명령·시연, Comm2LTL Spot Score 음성만 0.434 → 결합 0.588(BART) | [요약](papers/2024-NatSGD.md) |
 | AISHELL-5: The First Open-Source In-Car Multi-Channel Multi-Speaker Speech Dataset | Dai, Xie, Bu 외 (NWPU, AISHELL, Li Auto) | Interspeech 2025 | AISHELL-5 | 실차 다채널 다화자 공개, Eval1 CER 최저 16.65%, 분리 프런트엔드가 Eval2 cpCER 약 20포인트 좌우 | [요약](papers/2025-AISHELL-5.md) |
+| ICMC-ASR: The ICASSP 2024 In-Car Multi-Channel Automatic Speech Recognition Challenge | Wang, Xie 외 | IEEE ICASSP 2024 GC | ICMC-ASR(=AISHELL-5 추정) | 실차 다화자 챌린지, 베이스라인 cpCER 72.88% → 1위 21.48%(GSS 채널 선택 개선+TS-VAD) | [요약](papers/2024-ICMC-ASR-Challenge.md) |
+| SynTTS-Commands: A Public Dataset for On-Device KWS via TTS-Synthesized Multilingual Speech | Gan, Li | arXiv 2025 | SynTTS-Commands, GSC, MobvoiHotwords | TTS 합성 KWS, 실녹음 GSC zero-shot 88.0% → 50-shot 93.0% | [요약](papers/2025-SynTTS-Commands.md) |
 
 ## Daily 로그
 - [2026-10-29](daily/2026-10-29.md)
@@ -114,3 +117,4 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 - [2026-11-18](daily/2026-11-18.md)
 - [2026-11-19](daily/2026-11-19.md)
 - [2026-11-20](daily/2026-11-20.md)
+- [2026-11-21](daily/2026-11-21.md)

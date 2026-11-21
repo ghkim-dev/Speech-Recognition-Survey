@@ -7,5 +7,6 @@
 - **베이스라인(README)**: Eval1 CER — E-Branchformer 26.05%, Paraformer 미세조정 16.65%, Whisper-Small 50.69%, Qwen2-Audio 29.92%. Eval2(cpCER) — 프런트엔드를 AEC+IVA에서 SpatialNet으로 바꾸면 Paraformer 미세조정 66.68% → 47.18%로 개선. 실차 다화자 환경은 여전히 어려움
 - **라이선스/연구 이용**: 데이터 CC BY-SA 4.0 (OpenSLR 표기, 검색 결과 기준 — 이번 세션 openslr.org 직접 접속 불가), 베이스라인 코드 Apache 2.0 (GitHub LICENSE 확인). 상업 이용은 SA 조건 하에 가능
 - **접근 방식**: 공개 (OpenSLR SLR159, EU/중국 미러)
-- **주요 사용 논문**: [AISHELL-5 (Interspeech 2025)](../papers/2025-AISHELL-5.md)
+- **관련 챌린지**: 분할 통계(Train 94.75h/568세션, Dev 3.33h, Eval1 3.30h, Eval2 3.58h, 잡음 40.29h)가 ICASSP 2024 ICMC-ASR 챌린지 데이터와 동일 → ICMC-ASR 데이터의 공개판으로 판단(추정). 챌린지 1위 Eval2 cpCER 21.48%
+- **주요 사용 논문**: [AISHELL-5 (Interspeech 2025)](../papers/2025-AISHELL-5.md), [ICMC-ASR Challenge (ICASSP 2024)](../papers/2024-ICMC-ASR-Challenge.md)
 - **출처**: https://raw.githubusercontent.com/DaiYvhang/AISHELL-5/main/README.md , https://openslr.org/159/ , https://arxiv.org/abs/2505.23036

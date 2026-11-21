@@ -1,0 +1,11 @@
+# SynTTS-Commands (Media) — TTS 합성 다국어 음성 명령 데이터
+- **언어**: 영어 + 중국어 (영어 23개 클래스, 중국어 25개 클래스)
+- **규모**: 총 384,621개 샘플, 111.33시간, 35.76 GB. 영어 부분 Free-ST 기반 19,228개(4.88시간) + VoxCeleb1&2 기반 163,848개(41.6시간). 화자 임베딩 8,100개 (GitHub README 통계표). 논문 초록은 "VoxCeleb 855명, Free ST 7,245 발화"라고 적혀 있고 README 표는 Free-ST 855명/VoxCeleb 7,245명으로 되어 있어 **화자 수가 서로 반대로 적혀 있음(미확인)**
+- **녹음 환경**: 실녹음이 아님. CosyVoice 2 TTS로 VoxCeleb·Free ST Chinese Mandarin 화자 음색을 복제해 명령어를 합성. 원본 화자 음성의 녹음 조건(인터뷰 영상 등)이 음색 프롬프트로 일부 섞임
+- **명령 종류(영어)**: 재생 제어(Play, Pause, Resume 등), 곡 이동(Next track 등), 음량(Volume up, Mute, Set volume to 50% 등), 통화(Answer call, Hang up 등), 웨이크워드 5종(Hey Siri, OK Google, Hey Google, Alexa, Hi Bixby)
+- **Physical AI 활용 포인트**: 엣지 디바이스·차량·로봇의 저전력 KWS를 실녹음 없이 대량 학습하는 sim-to-real 출발점. README 기준 BCResNet을 합성 데이터로만 학습했을 때 Google Speech Commands 실녹음 테스트 정확도 88.0%, 실녹음 50개 추가 시 93.0%. 중국어 MobvoiHotwords에서는 zero-shot 재현율 0.44 → 50-shot 0.96으로, 합성만으로는 실환경 재현율이 부족하고 소량 실녹음이 핵심임을 보여줌. 원거리·잡음·잔향은 포함되지 않으므로 DEMAND·CAVEMOVE 등 잡음/IR과 결합 증강 필요
+- **벤치마크(합성 테스트셋, README)**: 영어 정확도 MicroCNN(4.2K 파라미터) 93.22%, DS-CNN(30K) 99.46%, CRNN(1.08M)·MobileNet-V1(2.65M) 99.50%. 합성 테스트에서는 포화 상태라 실녹음 평가가 실질 지표
+- **라이선스/연구 이용**: 저장소 LICENSE는 MIT(코드 기준). 데이터 자체 라이선스는 미확인. 원본 화자 음색 출처인 VoxCeleb(CC BY 4.0 메타데이터, 음성은 YouTube 원저작권) 조건이 합성 데이터에 어떻게 승계되는지도 미확인 → 상업 이용 시 별도 확인 필요
+- **접근 방식**: 공개 (Hugging Face 호스팅, README에 따르면 심사 중이라 링크 일부 가림. 저장소 data_samples/에 샘플 제공)
+- **주요 사용 논문**: [SynTTS-Commands (arXiv 2025)](../papers/2025-SynTTS-Commands.md)
+- **출처**: https://raw.githubusercontent.com/lugan113/SynTTS-Commands-Official/main/README.md , https://github.com/lugan113/SynTTS-Commands-Official , https://arxiv.org/abs/2511.07821
