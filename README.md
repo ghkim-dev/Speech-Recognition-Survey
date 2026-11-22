@@ -49,6 +49,7 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | NatSGD | 영어 | 명령 1,143개·참가자 18명(NatSGLD와 동일 명령) | WoZ 시뮬레이션 주방 로봇, 자연 음성+제스처, 전문가 시연 궤적 | 음성+제스처 조건 모방학습, 명령→LTL(Comm2LTL) | 코드 MIT, 데이터 미확인 | 공개 (프로젝트 사이트) | arXiv 2024 | [상세](datasets/NatSGD.md) |
 | AISHELL-5 (비영어 보조) | 중국어 | 100시간+ (train 94.75h/568세션, dev·eval1·eval2 각 약 3.3~3.6h) + 차량 잡음 40시간 | 전기차 실주행 60+ 조건(속도·창문·에어컨·음악), 원거리 4채널+근접 헤드셋+AEC 참조 2채널 | 차량 음성 비서의 겹침 발화 분할·인식, AEC·분리 프런트엔드 | CC BY-SA 4.0 (코드 Apache 2.0) | 공개 (OpenSLR 159) | Interspeech 2025 | [상세](datasets/AISHELL-5.md) |
 | SynTTS-Commands | 영어+중국어 | 384,621개·111.33시간(영어 23클래스 183,076개·46.5시간) | CosyVoice 2 TTS 합성, VoxCeleb·Free ST 화자 음색 복제, 미디어 제어·웨이크워드 명령 | 엣지·차량·로봇 KWS의 합성 사전학습+소량 실녹음 적응 | 코드 MIT, 데이터 미확인 | 공개 (Hugging Face) | arXiv 2025 | [상세](datasets/SynTTS-Commands.md) |
+| Hey Snips | 영어 | 웨이크워드 약 11K + 음성 약 86.5K(약 96시간), 2.2K+ 화자 | 크라우드소싱 근접 녹음, 음성 샘플도 같은 화자·기기에서 수집(원거리 아님) | 스마트 기기·로봇 상시 청취 웨이크워드, FRR @ 0.5 FA/h 평가 | 비상업 연구 전용, 수정본 재배포 금지 | 신청 (Google Form) | IEEE ICASSP 2019 | [상세](datasets/Hey-Snips.md) |
 
 ## 논문 요약
 | 제목 | 저자 | 학회/연도 | 사용 데이터셋 | 핵심 내용 | 링크 |
@@ -92,6 +93,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | AISHELL-5: The First Open-Source In-Car Multi-Channel Multi-Speaker Speech Dataset | Dai, Xie, Bu 외 (NWPU, AISHELL, Li Auto) | Interspeech 2025 | AISHELL-5 | 실차 다채널 다화자 공개, Eval1 CER 최저 16.65%, 분리 프런트엔드가 Eval2 cpCER 약 20포인트 좌우 | [요약](papers/2025-AISHELL-5.md) |
 | ICMC-ASR: The ICASSP 2024 In-Car Multi-Channel Automatic Speech Recognition Challenge | Wang, Xie 외 | IEEE ICASSP 2024 GC | ICMC-ASR(=AISHELL-5 추정) | 실차 다화자 챌린지, 베이스라인 cpCER 72.88% → 1위 21.48%(GSS 채널 선택 개선+TS-VAD) | [요약](papers/2024-ICMC-ASR-Challenge.md) |
 | SynTTS-Commands: A Public Dataset for On-Device KWS via TTS-Synthesized Multilingual Speech | Gan, Li | arXiv 2025 | SynTTS-Commands, GSC, MobvoiHotwords | TTS 합성 KWS, 실녹음 GSC zero-shot 88.0% → 50-shot 93.0% | [요약](papers/2025-SynTTS-Commands.md) |
+| Efficient Keyword Spotting Using Dilated Convolutions and Gating | Coucke 외 (Snips) | IEEE ICASSP 2019 | Hey Snips | WaveNet식 dilated conv+gating 스트리밍 KWS, 0.5 FA/h에서 LSTM 대비 FRR 약 94%(잡음 86%) 감소 | [요약](papers/2019-Hey-Snips-Dilated-Conv-KWS.md) |
+| Lend me an Ear: Speech Enhancement Using a Robotic Arm with a Microphone Array | Turcotte, Grondin | arXiv 2026 | 미확인(합성 혼합, -5~10 dB) | 7자유도 팔 16마이크 가변 어레이, 화자 위치→역기구학 재구성→DNN IRM+MVDR | [요약](papers/2026-Lend-me-an-Ear.md) |
 
 ## Daily 로그
 - [2026-10-29](daily/2026-10-29.md)
@@ -118,3 +121,4 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 - [2026-11-19](daily/2026-11-19.md)
 - [2026-11-20](daily/2026-11-20.md)
 - [2026-11-21](daily/2026-11-21.md)
+- [2026-11-22](daily/2026-11-22.md)

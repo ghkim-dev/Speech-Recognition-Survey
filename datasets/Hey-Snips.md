@@ -1,0 +1,14 @@
+# Hey Snips — 웨이크워드 검출 크라우드소싱 데이터 (Sonos/Snips)
+- **언어**: 영어 (다양한 억양)
+- **규모 (Dataset 1, Coucke et al. ICASSP 2019 버전)**: 웨이크워드 약 11K개 + 비웨이크워드 약 86.5K개(약 96시간, 2차 자료). 공식 README 표 기준
+  - Positive: train 5,876 / dev 2,504 / test 2,588(README 표기는 "25,88", 오기로 판단) 발화, 화자 1,179 / 516 / 520명, 화자당 최대 10개
+  - Negative: train 45,344 / dev 20,321 / test 20,821 발화, 화자 3,330 / 1,474 / 1,469명, 화자당 최대 30개
+  - GDPR 옵트아웃 권리 때문에 실제 제공 데이터 통계는 위 표와 다를 수 있다고 README에 명시
+- **별도 버전 (Dataset 2, Leroy et al. ICASSP 2019 연합학습 KWS)**: 69,582 발화 / 1,774 화자(train 53,991/1,374, dev 8,337/200, test 7,854/200). 신청 시 어느 버전인지 명시 필요
+- **녹음 환경**: 크라우드소싱 근접 녹음(사용자 자체 기기). 녹음 환경·하드웨어는 다양하나 **원거리(far-field) 데이터는 아님**. 음성 부정 샘플이 웨이크워드와 같은 화자·기기·환경에서 녹음되어 도메인 단서로 구분하는 지름길 학습을 막도록 설계. 논문에서는 잡음 조건(5 dB SNR) 평가를 위해 잡음을 덧붙여 사용
+- **형식**: train/dev/test.json(id, is_hotword, worker_id, duration, audio_file_path) + wav
+- **Physical AI 활용 포인트**: 스마트 스피커·가전·로봇의 상시 대기 웨이크워드 검출을 FRR @ 0.5 FA/h처럼 실사용 지표로 평가하는 공개 기준. Speech Commands(단어 분류)와 달리 "긴 비음성/일반 발화 속 웨이크워드 탐지" 문제라 로봇 상시 청취 설계에 더 가깝다. 원거리·로봇 자체 잡음 조건은 DEMAND·CAVEMOVE IR 등과 결합 증강 필요
+- **라이선스/연구 이용**: Sonos "Crowdsourced Data - Licence Terms". 비상업 학술·연구 목적만 허용, 상업 제품용 모델 학습도 금지. 수정본 재배포 금지(원본만 동일 조건으로 공개 가능), 사용 시 Coucke et al. 2019 인용 의무. 음성은 개인정보(GDPR)로 사용자가 데이터 관리자 책임을 짐
+- **접근 방식**: 신청 (Google Form 제출 후 임시 다운로드 URL 제공). 문의 sve-research@sonos.com (Snips가 2019-11 Sonos에 합류)
+- **주요 사용 논문**: [Efficient keyword spotting using dilated convolutions and gating (IEEE ICASSP 2019)](../papers/2019-Hey-Snips-Dilated-Conv-KWS.md), Leroy et al. "Federated learning for keyword spotting" (ICASSP 2019), Howl(castorini) 등 오픈소스 웨이크워드 툴킷의 평가 셋
+- **출처**: https://github.com/sonos/keyword-spotting-research-datasets (README·LICENSE, raw.githubusercontent.com으로 직접 확인), https://research.snips.ai/datasets/keyword-spotting , https://arxiv.org/abs/1811.07684
