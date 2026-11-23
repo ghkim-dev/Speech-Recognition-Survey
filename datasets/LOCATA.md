@@ -1,0 +1,18 @@
+# LOCATA — IEEE-AASP 음원 위치 추정·추적 챌린지 데이터 코퍼스
+- **언어**: 영어 (음성 소재가 CSTR VCTK 문장. Task 1·2는 스피커 재생, Task 3~6은 실제 화자가 VCTK 문장 낭독)
+- **규모**: 6개 과제(Task 1~6)의 개발·평가 셋. 총 녹음 시간·녹음 수·용량은 **미확인** (Zenodo·공식 사이트 직접 접속 불가)
+  - Task 1: 정지 음원 1개 + 정지 어레이 / Task 2: 정지 음원 여러 개 + 정지 어레이
+  - Task 3: 이동 화자 1명 + 정지 어레이 / Task 4: 이동 화자 여러 명 + 정지 어레이
+  - Task 5: 이동 화자 1명 + 이동 어레이 / Task 6: 이동 화자 여러 명 + 이동 어레이
+  - 챌린지 설명 페이지는 "5개 과제"로, 코퍼스 논문·TASLP 논문은 6개 과제로 기술(불일치, 미확인)
+- **녹음 환경**: 실내 음향실 1곳(잔향 있음). 어레이 4종 동시 녹음
+  - **NAO 로봇 머리 내장 12채널 의사구형 어레이** (Task 1~5)
+  - 32채널 Eigenmike 구형 어레이
+  - DICIT 평면 어레이(선형 부분 포함)
+  - 더미 헤드에 단 보청기 더미 한 쌍(Siemens Signia, 바이노럴, Task 3~5)
+  - 화자 근접 DPA 마이크 신호를 기준 신호로 제공. 모든 음원·마이크 위치(이동 포함)는 OptiTrack 적외선 카메라로 측정한 정답 궤적 제공
+- **Physical AI 활용 포인트**: 로봇 머리 마이크로 "누가 어디서 말하는지"를 찾고 따라가는 로봇 청각의 표준 벤치마크. 특히 Task 5·6은 **어레이(로봇) 자체가 움직이는 조건**이라 이동 로봇·휴머노이드의 화자 추적, 시선 전환, 빔포밍 조향(→ 원거리 ASR 전처리) 평가에 직접 쓸 수 있음. ASR 전사 과제는 없으므로 ASR 평가에는 VCTK 원문을 기준 전사로 별도 구성해야 함
+- **라이선스/연구 이용**: 공식 코퍼스 페이지 기준 **Open Data Commons 라이선스**(구체 종류 ODbL/ODC-By/PDDL 여부 미확인). 검색 결과의 CC BY 4.0 표기는 데이터가 아니라 논문(arXiv·Imperial 저장소)에 대한 것으로 보임. Zenodo 레코드의 라이선스 필드는 직접 확인하지 못함(미확인)
+- **접근 방식**: 공개 다운로드 (Zenodo, doi:10.5281/zenodo.3630471, 개발+평가 최종 릴리스). MATLAB 읽기·평가 코드 GitHub 공개, MUSIC 베이스라인 제공
+- **주요 사용 논문**: [The LOCATA Challenge: Acoustic Source Localization and Tracking (IEEE/ACM TASLP 2020)](../papers/2020-LOCATA-Challenge.md), Löllmann et al. "The LOCATA Challenge Data Corpus for Acoustic Source Localization and Tracking" (IEEE SAM 2018, pp. 410-414), 챌린지 참가 보고서(Nakadai 외 HARK MUSIC, MCC-PHAT, NAO 4채널 cascaded tracker 등, LOCATA Workshop @ IWAENC 2018)
+- **출처**: https://zenodo.org/record/3630471 , https://www.locata.lms.tf.fau.de/challenge-description/ , https://www.locata.lms.tf.fau.de/corpus/ , https://signalprocessingsociety.org/publications-resources/data-challenges/locata-2018-acoustic-source-localization-and-tracking , https://arxiv.org/abs/1811.08482 (모두 웹 검색 결과로 확인, 직접 접속 불가)
