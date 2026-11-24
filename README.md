@@ -51,6 +51,7 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | SynTTS-Commands | 영어+중국어 | 384,621개·111.33시간(영어 23클래스 183,076개·46.5시간) | CosyVoice 2 TTS 합성, VoxCeleb·Free ST 화자 음색 복제, 미디어 제어·웨이크워드 명령 | 엣지·차량·로봇 KWS의 합성 사전학습+소량 실녹음 적응 | 코드 MIT, 데이터 미확인 | 공개 (Hugging Face) | arXiv 2025 | [상세](datasets/SynTTS-Commands.md) |
 | Hey Snips | 영어 | 웨이크워드 약 11K + 음성 약 86.5K(약 96시간), 2.2K+ 화자 | 크라우드소싱 근접 녹음, 음성 샘플도 같은 화자·기기에서 수집(원거리 아님) | 스마트 기기·로봇 상시 청취 웨이크워드, FRR @ 0.5 FA/h 평가 | 비상업 연구 전용, 수정본 재배포 금지 | 신청 (Google Form) | IEEE ICASSP 2019 | [상세](datasets/Hey-Snips.md) |
 | LOCATA | 영어 (VCTK 문장) | 6개 과제 개발·평가 셋, 총 시간 미확인 | 음향실, NAO 로봇 머리 12ch·Eigenmike 32ch·DICIT 평면·바이노럴 보청기 동시 녹음, 이동 화자·이동 어레이, OptiTrack 정답 궤적 | 로봇 머리 화자 위치 추정·추적, 빔포밍 조향(원거리 ASR 앞단) | Open Data Commons(세부 종류 미확인) | 공개 (Zenodo) | IEEE/ACM TASLP 2020, IEEE SAM 2018 | [상세](datasets/LOCATA.md) |
+| DREGON | 영어 (TIMIT 음성 재생) | 총 시간 미확인 (정지·ego-noise 단독·비행 중 음원 녹음) | MikroKopter 쿼드로터 정육면체 8ch 어레이 44.1 kHz, 실내(RT<150 ms), Vicon 정답+로터 속도+IMU | 드론·로봇 ego-noise 하 음원 위치 추정, 로봇 상태 조건화 잡음 제거 | 학술·교육 무료(라이선스명 미확인) | 공개 (dregon.inria.fr) | IEEE/RSJ IROS 2018, IEEE SP Cup 2019 | [상세](datasets/DREGON.md) |
 
 ## 논문 요약
 | 제목 | 저자 | 학회/연도 | 사용 데이터셋 | 핵심 내용 | 링크 |
@@ -98,6 +99,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | Lend me an Ear: Speech Enhancement Using a Robotic Arm with a Microphone Array | Turcotte, Grondin | arXiv 2026 | 미확인(합성 혼합, -5~10 dB) | 7자유도 팔 16마이크 가변 어레이, 화자 위치→역기구학 재구성→DNN IRM+MVDR | [요약](papers/2026-Lend-me-an-Ear.md) |
 | The LOCATA Challenge: Acoustic Source Localization and Tracking | Evers, Löllmann 외 | IEEE/ACM TASLP 2020 | LOCATA | 정지/이동 음원×정지/이동 어레이 6개 과제 실측 위치 추정·추적 벤치마크, MUSIC 베이스라인 | [요약](papers/2020-LOCATA-Challenge.md) |
 | ODAS: Open embeddeD Audition System | Grondin, Michaud 외 (Sherbrooke) | Frontiers in Robotics and AI 2022 | 자체 실측 | C 기반 저전력 로봇 청각(SRP-PHAT-HSDA 위치 추정+M3K 추적+분리), Raspberry Pi 실시간, MIT·ROS | [요약](papers/2022-ODAS.md) |
+| DREGON: Dataset and Methods for UAV-Embedded Sound Source Localization | Strauss, Mordel, Miguet, Deleforge | IEEE/RSJ IROS 2018 | DREGON | 드론 탑재 8ch 어레이 ego-noise 데이터+GCC-PHAT/MUSIC 베이스라인, 비행 중 음성 위치 추정 난제 | [요약](papers/2018-DREGON.md) |
+| Development, Deployment and Applications of Robot Audition Open Source Software HARK | Nakadai, Okuno, Mizumoto | J. Robotics and Mechatronics 2017 (선행 IEEE Humanoids 2008) | 응용 사례 | 로봇 청각 오픈소스 미들웨어(위치 추정·분리·ASR 연동), HARK-Embedded/SaaS | [요약](papers/2017-HARK.md) |
 
 ## Daily 로그
 - [2026-10-29](daily/2026-10-29.md)
@@ -126,3 +129,4 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 - [2026-11-21](daily/2026-11-21.md)
 - [2026-11-22](daily/2026-11-22.md)
 - [2026-11-23](daily/2026-11-23.md)
+- [2026-11-24](daily/2026-11-24.md)

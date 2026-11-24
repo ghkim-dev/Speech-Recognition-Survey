@@ -1,0 +1,11 @@
+# DREGON — DRone EGOnoise and localizatiON 데이터셋
+- **언어**: 영어 (스피커 재생 음원이 TIMIT 음성. 백색잡음 음원 녹음도 포함)
+- **규모**: 총 녹음 시간·파일 수·용량은 **미확인** (dregon.inria.fr·HAL PDF 직접 접속 불가, 웹 검색 결과로만 확인)
+  - 구성: (1) 정지(비행 없음) 상태에서 스피커 음원 녹음(깨끗한 음성), (2) 음원 없이 비행만 한 ego-noise 녹음(음성 없는 잡음), (3) 비행 중 스피커 음원(음성 또는 백색잡음) 녹음
+- **녹음 환경**: MikroKopter 쿼드로터 UAV에 3D 프린팅한 **정육면체형 8채널 마이크 어레이** 장착, 44.1 kHz. 잔향 시간 150 ms 미만의 넓은 실내 공간, 배경 잡음은 무시할 수준. 비행 속도는 약 1 m/s 이하(호버링 등 여러 패턴)
+  - 주석: 12대 카메라 **Vicon 모션 캡처**로 UAV·음원의 위치와 자세를 연속 측정 → 음원 3D 위치(방향) 정답. 개별 **로터 회전 속도**와 **관성 측정(IMU)** 값을 상시 함께 기록
+- **Physical AI 활용 포인트**: 로봇 플랫폼 자체가 내는 강한 비정상 잡음(ego-noise) 하에서의 음원 위치 추정·음성 향상 벤치마크. 로터 속도가 함께 주어져 **"로봇 상태(모터 속도)로 조건화한 ego-noise 제거"** 연구(예: 2025 rotor-conditioned 모델)에 쓸 수 있고, 지상 이동 로봇·휴머노이드의 모터 잡음 문제로 확장 가능. 수색·구조(SAR) 드론의 음성 기반 조난자 탐지가 원래 목적. ASR 전사 과제는 없으며 TIMIT 원문으로 별도 구성 필요
+- **라이선스/연구 이용**: 공식 페이지 기준 **학술·교육 목적 무료 이용**(검색 결과 인용). 상업적 이용 조건과 정확한 라이선스명은 미확인
+- **접근 방식**: 공개 다운로드 (http://dregon.inria.fr), MATLAB 베이스라인 코드 포함. IEEE Signal Processing Cup 2019 공개·최종 단계 데이터와 정답·MATLAB 스크립트도 공개
+- **주요 사용 논문**: [DREGON: Dataset and Methods for UAV-Embedded Sound Source Localization (IEEE/RSJ IROS 2018)](../papers/2018-DREGON.md), Deleforge 외 "Audio-Based Search and Rescue with a Drone: Highlights from the IEEE Signal Processing Cup 2019 Student Competition" (IEEE Signal Processing Magazine 36(5), 2019, arXiv 1907.04655), "Enhancing drone audition with rotor-conditioned deep models" (EURASIP JASMP 2025)
+- **출처**: https://dregon.inria.fr/ , https://hal.inria.fr/hal-01854878 , https://ieeexplore.ieee.org/document/8593581/ , https://members.loria.fr/ADeleforge/?p=300 , https://arxiv.org/abs/1907.04655 , https://link.springer.com/article/10.1186/s13636-025-00425-2 (모두 웹 검색 결과로 확인, 직접 접속 불가)
