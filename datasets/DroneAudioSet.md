@@ -1,0 +1,13 @@
+# DroneAudioSet — Audio Dataset for Drone-based Search and Rescue
+- **언어**: 영어 음성 포함 여부·비율 **미확인**. 음원은 스피커로 재생한 AudioSet 계열 소리이며, 공식 코드의 레이블 매핑은 AudioSet 527개 클래스를 **HV(사람 음성: Speech, Male/Female/Child speech, Conversation, 비명 등 48개)**, **HNV(사람 비음성 소리: 발소리·박수 등 171개)**, **NH(사람이 아닌 소리 307개)** 3범주로 묶음
+- **규모**: 주석 녹음 **23.5시간**, 다운로드 용량 **42.6 GB**(프로젝트 페이지 기준). 후속 DroneAudioNet 논문은 학습/검증/테스트를 74.4/24.7/25.3시간으로 적는데, 채널을 각각 단일 채널 입력으로 센 수치로 보임(추정)
+- **녹음 환경**: 드론을 **고정 알루미늄 프레임에 묶은 상태**로 실제 회전시키며(비행은 아님) 스피커 음원과 드론 잡음을 **함께 녹음**. 공식 `avg-snr-per-setting.csv` 기준 216개 설정 조합:
+  - 실내 공간(방) 3개, 드론 2종, 스로틀 low/high, 스피커 음량 60/90 dB, 스피커 거리 1/3/5/6/9 m, 드론-마이크 거리 25/50 cm
+  - 마이크 3종: 드론 위 8채널 어레이(M-up), 드론 아래 8채널 어레이(M-down), 단일 마이크(M-center, Soundskrit). 처리 샘플링 레이트 16 kHz(코드 설정값, 원본 레이트는 미확인)
+  - 같은 설정마다 "드론+음원", "음원만", "드론만" 녹음을 따로 제공 → 깨끗한 정답 신호와 잡음 단독 신호 확보
+  - SNR 범위: 논문 초록(arXiv) **-57.2 ~ -2.5 dB**, 프로젝트 페이지 -60 ~ 0 dB, 설정별 평균 SNR CSV는 -48.7 ~ -3.39 dB (출처마다 다름)
+- **Physical AI 활용 포인트**: 드론·이동 로봇 탑재 마이크의 극한 ego-noise(80 dBA 이상, 논문 기준) 하에서 **사람 존재 감지(음성/비명 vs 비음성 vs 비인간 소리)**와 잡음 억제를 평가. 11-24 DREGON이 잡음과 음원을 따로 녹음해 합성한 반면, 실제 음향 상호작용을 포함한 동시 녹음이고 마이크 위치(위/아래/단일)·거리·스로틀 트레이드오프를 체계적으로 비교할 수 있음. ASR 전사·로터 속도·정답 위치는 제공하지 않음(확인된 범위 내)
+- **라이선스/연구 이용**: Hugging Face 데이터셋 **MIT 라이선스**(웹 검색 결과 기준, HF 페이지 직접 확인 불가). 코드 저장소에는 LICENSE 파일 없음(직접 확인)
+- **접근 방식**: 공개 다운로드 (Hugging Face `ahlab-drone-project/DroneAudioSet`), 코드 GitHub `augmented-human-lab/DroneAudioSet-code`(MVDR 빔포밍 → 스펙트럴 게이팅/MP-SENet → SSLAM 분류 파이프라인)
+- **주요 사용 논문**: [DroneAudioset: An Audio Dataset for Drone-based Search and Rescue (NeurIPS 2025 Datasets and Benchmarks)](../papers/2025-DroneAudioSet.md), DroneAudioNet (arXiv 2608.00875, 상세 미확인)
+- **출처**: https://arxiv.org/abs/2510.15383 , https://proceedings.neurips.cc/paper_files/paper/2025/hash/adececbc73a58724db0f3c0d5c77f338-Abstract-Datasets_and_Benchmarks_Track.html , https://huggingface.co/datasets/ahlab-drone-project/DroneAudioSet , https://github.com/augmented-human-lab/DroneAudioSet-code (README·website/index.html·scripts/csv-data 직접 확인), https://apps.ahlab.org/DroneAudioSet-code/ , https://arxiv.org/html/2608.00875

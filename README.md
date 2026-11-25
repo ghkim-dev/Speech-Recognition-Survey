@@ -52,6 +52,7 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | Hey Snips | 영어 | 웨이크워드 약 11K + 음성 약 86.5K(약 96시간), 2.2K+ 화자 | 크라우드소싱 근접 녹음, 음성 샘플도 같은 화자·기기에서 수집(원거리 아님) | 스마트 기기·로봇 상시 청취 웨이크워드, FRR @ 0.5 FA/h 평가 | 비상업 연구 전용, 수정본 재배포 금지 | 신청 (Google Form) | IEEE ICASSP 2019 | [상세](datasets/Hey-Snips.md) |
 | LOCATA | 영어 (VCTK 문장) | 6개 과제 개발·평가 셋, 총 시간 미확인 | 음향실, NAO 로봇 머리 12ch·Eigenmike 32ch·DICIT 평면·바이노럴 보청기 동시 녹음, 이동 화자·이동 어레이, OptiTrack 정답 궤적 | 로봇 머리 화자 위치 추정·추적, 빔포밍 조향(원거리 ASR 앞단) | Open Data Commons(세부 종류 미확인) | 공개 (Zenodo) | IEEE/ACM TASLP 2020, IEEE SAM 2018 | [상세](datasets/LOCATA.md) |
 | DREGON | 영어 (TIMIT 음성 재생) | 총 시간 미확인 (정지·ego-noise 단독·비행 중 음원 녹음) | MikroKopter 쿼드로터 정육면체 8ch 어레이 44.1 kHz, 실내(RT<150 ms), Vicon 정답+로터 속도+IMU | 드론·로봇 ego-noise 하 음원 위치 추정, 로봇 상태 조건화 잡음 제거 | 학술·교육 무료(라이선스명 미확인) | 공개 (dregon.inria.fr) | IEEE/RSJ IROS 2018, IEEE SP Cup 2019 | [상세](datasets/DREGON.md) |
+| DroneAudioSet | 음성 포함(HV 범주, 언어 비율 미확인) | 23.5시간 (42.6 GB), 216개 설정 | 프레임 고정 드론 2종 실제 회전+스피커 음원 동시 녹음, 방 3개, 위/아래 8ch 어레이+단일 마이크, SNR 약 -57~-3 dB | 드론·로봇 ego-noise 하 사람 존재 감지(음성/비음성/비인간), 잡음 억제·마이크 배치 비교 | MIT(HF, 검색 결과 기준) | 공개 (Hugging Face) | NeurIPS 2025 D&B | [상세](datasets/DroneAudioSet.md) |
 
 ## 논문 요약
 | 제목 | 저자 | 학회/연도 | 사용 데이터셋 | 핵심 내용 | 링크 |
@@ -101,6 +102,8 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | ODAS: Open embeddeD Audition System | Grondin, Michaud 외 (Sherbrooke) | Frontiers in Robotics and AI 2022 | 자체 실측 | C 기반 저전력 로봇 청각(SRP-PHAT-HSDA 위치 추정+M3K 추적+분리), Raspberry Pi 실시간, MIT·ROS | [요약](papers/2022-ODAS.md) |
 | DREGON: Dataset and Methods for UAV-Embedded Sound Source Localization | Strauss, Mordel, Miguet, Deleforge | IEEE/RSJ IROS 2018 | DREGON | 드론 탑재 8ch 어레이 ego-noise 데이터+GCC-PHAT/MUSIC 베이스라인, 비행 중 음성 위치 추정 난제 | [요약](papers/2018-DREGON.md) |
 | Development, Deployment and Applications of Robot Audition Open Source Software HARK | Nakadai, Okuno, Mizumoto | J. Robotics and Mechatronics 2017 (선행 IEEE Humanoids 2008) | 응용 사례 | 로봇 청각 오픈소스 미들웨어(위치 추정·분리·ASR 연동), HARK-Embedded/SaaS | [요약](papers/2017-HARK.md) |
+| DroneAudioset: An Audio Dataset for Drone-based Search and Rescue | Gupta, Ramesh 외 (NUS) | NeurIPS 2025 D&B | DroneAudioSet | 드론 잡음+음원 실측 동시 녹음 23.5시간, MVDR/MP-SENet → SSLAM 사람 존재 3범주 분류 베이스라인 | [요약](papers/2025-DroneAudioSet.md) |
+| Enhancing drone audition with rotor-conditioned deep models | Gulli, Fontana, Drioli, Salvati, Ferrin | EURASIP JASMP 2025 | DREGON | 로터 속도 시계열로 조건화한 음성 향상, 16개 구성 중 13개 최고, 25% 파라미터 경량 모델도 최고 근접 | [요약](papers/2025-Rotor-Conditioned-Drone-Audition.md) |
 
 ## Daily 로그
 - [2026-10-29](daily/2026-10-29.md)
@@ -130,3 +133,4 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 - [2026-11-22](daily/2026-11-22.md)
 - [2026-11-23](daily/2026-11-23.md)
 - [2026-11-24](daily/2026-11-24.md)
+- [2026-11-25](daily/2026-11-25.md)
