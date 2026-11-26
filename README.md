@@ -20,6 +20,10 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | DIRHA-English | 영어 | LDC2018S01 약 85시간 | 다실 아파트, 다수 마이크 | 홈 음성 상호작용 | LDC 조건 미확인 | LDC | ASRU 2015 | [상세](datasets/DIRHA-English.md) |
 | AMI | 영어 | 약 100시간 | 회의, 근접+원거리 마이크 | 다화자 회의·diarization | CC BY 4.0 | 공개 | Carletta et al. 2005 | [상세](datasets/AMI.md) |
 | MChRSR | 영어 | 미확인 | PR2 이동 중 다채널 녹음 | 로봇 ego-noise ASR | 미확인 | 미확인 | 2017 | [상세](datasets/MChRSR.md) |
+| CHiME-4 | 영어 | 학습 약 18시간(실 3h+시뮬 15h, 2차 자료) | 6마이크 태블릿, 버스·카페·거리 등 4개 환경 | 소형 어레이 잡음 강건 ASR | 미확인(WSJ0 LDC 필요 가능성) | 미확인 | CSL 2017 | [상세](datasets/CHiME-4.md) |
+| VoiceBank-DEMAND | 영어 | 학습 11,572문장(약 10h), 테스트 824문장 | 낭독+DEMAND 잡음 합성, 48 kHz | 엣지 음성 향상 벤치마크 | CC BY 4.0(2차 자료) | 공개 (DataShare) | SSW 2016 | [상세](datasets/VoiceBank-DEMAND.md) |
+| Fluent Speech Commands | 영어 | 30,043발화, 97명, 19h, 의도 31개 | 스마트홈 명령, 16 kHz 단채널 | 음성 명령 → 의도 직접 분류 | 학술 연구 전용(2차 자료) | 신청 | Interspeech 2019 | [상세](datasets/Fluent-Speech-Commands.md) |
+| OmniAction | 영어(미확인) | 141,162 에피소드, 화자 5천+ | 합성 음성+환경음, Open-X 과제 기반 | 맥락형 음성 로봇 조작(Speech-VLA) | CC BY-NC 4.0 | 공개 (HF) | ICLR 2026 | [상세](datasets/OmniAction.md) |
 
 ## 논문 요약
 | 제목 | 저자 | 학회/연도 | 사용 데이터셋 | 핵심 내용 | 링크 |
@@ -33,6 +37,12 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | The DIRHA-English corpus | Ravanelli 외 | ASRU 2015 | DIRHA-English | 가정 원거리 인식 | [요약](papers/2015-DIRHA-English.md) |
 | Single-Channel Robot Ego-Speech Filtering | Li, Hindriks, Kunneman | arXiv 2024 | 자체(Pepper) | 로봇 자기 발화 제거 | [요약](papers/2024-Pepper-Ego-Speech-Filtering.md) |
 | MChRSR | 미확인 | 2017 | MChRSR | 로봇 이동 잡음 ASR | [요약](papers/2017-MChRSR.md) |
+| An analysis of environment, microphone and data simulation mismatches in robust speech recognition | Vincent, Watanabe 외 | CSL 2017 | CHiME-3/4 | 실/시뮬 불일치 분석, 마이크 수 중요 | [요약](papers/2017-CHiME-4-Mismatch-Analysis.md) |
+| Investigating RNN-based speech enhancement methods for noise-robust TTS | Valentini-Botinhao 외 | SSW 2016 | VoiceBank-DEMAND | RNN 음성 향상 | [요약](papers/2016-VoiceBank-DEMAND-RNN-SE-TTS.md) |
+| Speech Model Pre-training for End-to-End SLU | Lugosch, Ravanelli 외 | Interspeech 2019 | Fluent Speech Commands | ASR 사전학습 E2E 의도 분류 | [요약](papers/2019-Fluent-Speech-Commands-SLU-Pretraining.md) |
+| RoboOmni | Wang, Fu 외 | ICLR 2026 | OmniAction | 음성·환경음·시각 기반 능동형 조작 | [요약](papers/2025-RoboOmni.md) |
+| End-to-end Listen, Look, Speak and Act (ELLSA) | Wang, Yu 외 | ICLR 2026 | 음성 QA·조작 벤치마크 | full-duplex 음성+행동 모델 | [요약](papers/2025-ELLSA.md) |
 
 ## Daily 로그
 - [2026-10-29](daily/2026-10-29.md)
+- [2026-11-26](daily/2026-11-26.md)
