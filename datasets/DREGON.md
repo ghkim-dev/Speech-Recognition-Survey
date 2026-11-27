@@ -7,5 +7,6 @@
 - **Physical AI 활용 포인트**: 로봇 플랫폼 자체가 내는 강한 비정상 잡음(ego-noise) 하에서의 음원 위치 추정·음성 향상 벤치마크. 로터 속도가 함께 주어져 **"로봇 상태(모터 속도)로 조건화한 ego-noise 제거"** 연구(예: 2025 rotor-conditioned 모델)에 쓸 수 있고, 지상 이동 로봇·휴머노이드의 모터 잡음 문제로 확장 가능. 수색·구조(SAR) 드론의 음성 기반 조난자 탐지가 원래 목적. ASR 전사 과제는 없으며 TIMIT 원문으로 별도 구성 필요
 - **라이선스/연구 이용**: 공식 페이지 기준 **학술·교육 목적 무료 이용**(검색 결과 인용). 상업적 이용 조건과 정확한 라이선스명은 미확인
 - **접근 방식**: 공개 다운로드 (http://dregon.inria.fr), MATLAB 베이스라인 코드 포함. IEEE Signal Processing Cup 2019 공개·최종 단계 데이터와 정답·MATLAB 스크립트도 공개
+- **파생 데이터**: [SPCUP19](SPCup19-Drone-SSL.md)
 - **주요 사용 논문**: [DREGON: Dataset and Methods for UAV-Embedded Sound Source Localization (IEEE/RSJ IROS 2018)](../papers/2018-DREGON.md), Deleforge 외 "Audio-Based Search and Rescue with a Drone: Highlights from the IEEE Signal Processing Cup 2019 Student Competition" (IEEE Signal Processing Magazine 36(5), 2019, arXiv 1907.04655), "Enhancing drone audition with rotor-conditioned deep models" (EURASIP JASMP 2025)
 - **출처**: https://dregon.inria.fr/ , https://hal.inria.fr/hal-01854878 , https://ieeexplore.ieee.org/document/8593581/ , https://members.loria.fr/ADeleforge/?p=300 , https://arxiv.org/abs/1907.04655 , https://link.springer.com/article/10.1186/s13636-025-00425-2 (모두 웹 검색 결과로 확인, 직접 접속 불가)

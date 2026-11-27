@@ -1,0 +1,13 @@
+# IEEE Signal Processing Cup 2019 데이터 (SPCUP19, 드론 탑재 음원 위치 추정)
+- **언어**: 영어 음성(스피커 재생) + 백색잡음 음원
+- **규모** (2차 자료 기준):
+  - 정지(static) 과제: 8채널 녹음 300개, 각 약 2초. 녹음마다 음성 음원 1개의 방위각·고도각 정답
+  - 비행(flight) 과제: 8채널 녹음 36개, 각 4초. 앞 16개는 음성, 뒤 20개는 백색잡음 음원. 녹음마다 시각 15개(각 500 ms 창)의 평균 방위각·고도각을 추정
+  - 개발용으로 DREGON 데이터 일부(음원 없는 ego-noise, 정지 상태 음원 녹음) 함께 제공
+- **녹음 환경**: [DREGON](DREGON.md)과 같은 장비. 쿼드로터 아래 3D 프린팅 정육면체 8채널 MEMS 어레이, 44.1 kHz, 실내. 음원은 고정 스피커이고 드론이 움직여 겉보기 방향이 시간에 따라 바뀜
+- **평가**: 정지 과제는 방위각·고도각 오차가 모두 10° 이내인 비율. 비행 과제는 시점별 같은 기준 (2차 자료 기준)
+- **Physical AI 활용 포인트**: 로터 잡음과 바람(SNR 매우 낮음) 아래에서 짧은 음성 구간의 방향을 찾는 표준 과제. 로봇·드론이 "사람 목소리 방향 찾기 → 접근 → 음성 명령 인식"으로 이어지는 흐름의 첫 단계. 정답이 공개되어 있어 이후 연구(DOANet 등)의 비교 기준으로 쓰임
+- **라이선스/연구 이용**: DREGON과 같이 학술·교육 목적 무료로 보임(정확한 라이선스명 미확인)
+- **접근 방식**: 공개 (dregon.inria.fr의 SP Cup 2019 데이터·정답·MATLAB 스크립트, Kaggle 미러 awsaf49/ieee-signal-processing-cup-2019-dataset, 미러 라이선스 미확인)
+- **주요 사용 논문**: [Deleforge 외, IEEE Signal Processing Magazine 2019](../papers/2019-SP-Cup-2019-Drone-Search-and-Rescue.md), DOANet(SP Cup 참가팀 후속, 학회 미확인)
+- **출처**: https://arxiv.org/abs/1907.04655 , https://dregon.inria.fr/ , https://www.kaggle.com/datasets/awsaf49/ieee-signal-processing-cup-2019-dataset , https://signalprocessingsociety.org/community-involvement/ieee-signal-processing-cup-2019 (모두 웹 검색 결과로 확인, 직접 접속 불가)

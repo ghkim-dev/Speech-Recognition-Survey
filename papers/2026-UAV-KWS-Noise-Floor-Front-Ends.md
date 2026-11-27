@@ -1,0 +1,18 @@
+# Normalise or Condition? Noise-floor Front-ends for On-board Keyword Spotting under UAV Rotor Ego-noise
+- **저자**: Yida Lin, Bing Xue, Mengjie Zhang, Sam Schofield, Richard Green (소속은 검색 결과로 확인 못 함) / arXiv 2609.31699 (2026-09, 동료 심사 여부 미확인)
+- **문제**: 소형 멀티로터 드론 기체에 단일 마이크를 달고 음성으로 조종할 때, 로터 잡음이 화자보다 20~60 dB 커서 명령이 음(-)의 SNR로 들어옴. 작은 KWS 모델은 GSC에서는 잘하지만 처음 듣는 잡음에 약하고, 실제로 나는 마이크의 ego-noise 아래에서 평가한 연구가 없음
+- **방법**: 직전 2초 동안 mel 대역별 20번째 백분위수로 잡음 바닥(noise floor) N_f를 추적하고, 두 방식으로 사용
+  - 정규화(NFN): max(X − N_f, 0)/σ, 로그 영역 스펙트럼 차감
+  - 조건화(NPC): 정규화한 log-mel과 N_f를 2채널로 입력해 신경망이 보정을 직접 학습. NPC-a는 N_f 평균으로 기준을 맞춰 마이크 이득에도 불변
+  - 백엔드 BC-ResNet(57k~349k 파라미터), 100 ms마다 직전 1초 분류. 12클래스(up, down, left, right, forward, backward, go, stop, on, off, unknown, silence)
+- **데이터셋/벤치마크**: [Speech Commands v2](../datasets/Speech-Commands.md) 단어 + [DroneAudioSet](../datasets/DroneAudioSet.md) drone-only ego-noise 혼합. 학습은 drone2, 평가는 처음 보는 drone1, −15~20 dB. 스트리밍 오경보 평가는 음성 없는 로터 잡음 4.4시간, 실제 드론+방해음 평가는 DroneAudioSet drone-with-source 2.0시간, ESC-50을 학습 음성 아님(negative) 데이터로 사용
+- **결과** (저자 GitHub README 기준):
+  - 클립 단위로는 강건 프런트엔드들이 비슷함(log-mel 대비 평균 +2~3포인트, −15 dB에서 최대 +14). ego-noise 학습 log-mel 평균 81.2% → PCEN+NPC-a 84.5%(최고), 잡음만 입력 시 오경보율 3.6% → 1.5%
+  - 스트리밍에서는 차이가 큼: 정규화 계열(CMN, NFN)은 연속 로터 잡음에서 약 10배 더 자주 오작동(τ=0.7에서 8.2·7.7 FA/h vs log-mel 0.8). 1 FA/h 예산에서는 log-mel보다 낮아짐(0 dB에서 약 −9포인트)
+  - 조건화는 오경보율을 유지하면서 검출을 늘림: 1 FA/h에서 −10 dB 적중률 log-mel 51.7% → NPC-a 59.7%, PCEN+NPC-a 60.8%(약 +8포인트, 3 seed)
+  - NPC-a는 마이크 이득 ±20 dB 불일치에도 불변(log-mel은 작은 모델에서 최대 27포인트 하락). FiLM식 조건화는 효과 없음
+  - 실제 드론+환경음·주변 사람 말소리에서는 모든 프런트엔드가 시간당 수십 번 오작동. ESC-50 negative 학습으로 절반 감소, 나머지는 웨이크워드로 막아야 한다고 결론
+  - NVIDIA Jetson Orin NX에서 BC-ResNet-3 전체 파이프라인이 CPU 2코어로 100 ms당 3.2 ms. PX4 비행 제어기와 MAVLink로 연동. INT8 양자화는 −10 dB에서 6포인트 손실·속도 이득 없음
+- **공개 여부**: 코드·결과·Jetson 런타임 공개(GitHub stereo-tree-pruning/UAV-Rotor-Ego-Noise, MIT). 데이터는 GSC v2(CC BY 4.0)·DroneAudioSet(MIT)·ESC-50(CC BY-NC 3.0)을 따로 내려받음
+- **Physical AI 시사점**: 로봇 음성 명령 KWS를 "클립 정확도"가 아니라 "연속 잡음에서 시간당 오경보" 기준으로 봐야 한다는 점을 실측으로 보임. 잡음을 빼는(정규화) 것보다 잡음 상태를 입력으로 주는(조건화) 쪽이 안전하다는 결과는 rotor-conditioned 음성 향상(2025)과 같은 방향으로, 로봇 내부 상태를 음성 처리 입력으로 쓰는 흐름을 KWS까지 넓힘. 실제 비행 중 녹음 평가는 아직 없음(drone-only는 프레임 고정 녹음)
+- **링크**: https://arxiv.org/abs/2609.31699 , https://github.com/stereo-tree-pruning/UAV-Rotor-Ego-Noise

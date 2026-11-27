@@ -23,7 +23,7 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | CHiME-3/4 | 영어 | 학습 약 20시간(실 1,600+시뮬 7,138 문장), dev/test 각 1,640/1,320 문장 | 태블릿 6채널, 버스·카페·거리·보행구역 (CHiME-4는 6/2/1채널 트랙) | 모바일 다채널 잡음 ASR | 미확인(WSJ0 기반) | 미확인 | ASRU 2015, CSL 2017 | [상세](datasets/CHiME-3-4.md) |
 | VoiceBank+DEMAND | 영어 | 학습 11,572 발화/28 화자(2차 자료) | VCTK+DEMAND 잡음 병렬 48kHz | 음성 향상 전처리 | 구 레코드 CC BY 4.0, 현행 미확인 | 공개 (Edinburgh) | 미확인 | [상세](datasets/VoiceBank-DEMAND.md) |
 | DEMAND | 비음성(잡음) | 미확인 (16채널, 6개 환경 범주) | 16마이크 어레이 실환경 잡음 | 잡음 강건 ASR·음성 향상 잡음원 | CC BY-SA 3.0 (Zenodo 원본) | 공개 (Zenodo) | Thiemann 외 2013 | [상세](datasets/DEMAND.md) |
-| OmniAction | 영어 추정 | 140k 에피소드, 5k+ 화자 | 맥락적 음성 지시 로봇 조작 | 음성-VLA | 미확인 | 공개 (HF) | RoboOmni (ICLR 2026) | [상세](datasets/OmniAction.md) |
+| OmniAction | 영어(합성 음성, 미확인) | 141,162 에피소드, 스킬 112·객체 748, 화자 5k+ | Open-X 과제를 맥락형 음성 지시로 재작성·합성, 지시 유형 6개 | 음성-VLA | CC BY-NC 4.0(HF, 2차 확인) | 공개 (HF) | RoboOmni (ICLR 2026) | [상세](datasets/OmniAction.md) |
 | MIVIA Speech Command | 미확인 | 미확인 | 로봇 마이크+산업 잡음 증강 | 로봇 음성 명령 | 미확인 | 공개 (Zenodo) | 미확인 | [상세](datasets/MIVIA-Speech-Command.md) |
 | VoCub | 영어 | 103 명령/29화자 | iCub 명령 | 휴머노이드 명령 인식 | 미확인 | 공개 | 미확인 | [상세](datasets/VoCub.md) |
 | SLURP | 영어 | 실녹음 약 72K + 합성 약 69K 발화, 18 시나리오 | 홈 로봇 비서 명령, 177 화자 | 홈 로봇 음성 명령 SLU | 텍스트 CC BY 4.0 / 오디오 CC BY-NC 4.0 | 공개 (GitHub+Zenodo) | EMNLP 2020 | [상세](datasets/SLURP.md) |
@@ -53,6 +53,7 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | LOCATA | 영어 (VCTK 문장) | 6개 과제 개발·평가 셋, 총 시간 미확인 | 음향실, NAO 로봇 머리 12ch·Eigenmike 32ch·DICIT 평면·바이노럴 보청기 동시 녹음, 이동 화자·이동 어레이, OptiTrack 정답 궤적 | 로봇 머리 화자 위치 추정·추적, 빔포밍 조향(원거리 ASR 앞단) | Open Data Commons(세부 종류 미확인) | 공개 (Zenodo) | IEEE/ACM TASLP 2020, IEEE SAM 2018 | [상세](datasets/LOCATA.md) |
 | DREGON | 영어 (TIMIT 음성 재생) | 총 시간 미확인 (정지·ego-noise 단독·비행 중 음원 녹음) | MikroKopter 쿼드로터 정육면체 8ch 어레이 44.1 kHz, 실내(RT<150 ms), Vicon 정답+로터 속도+IMU | 드론·로봇 ego-noise 하 음원 위치 추정, 로봇 상태 조건화 잡음 제거 | 학술·교육 무료(라이선스명 미확인) | 공개 (dregon.inria.fr) | IEEE/RSJ IROS 2018, IEEE SP Cup 2019 | [상세](datasets/DREGON.md) |
 | DroneAudioSet | 음성 포함(HV 범주, 언어 비율 미확인) | 23.5시간 (42.6 GB), 216개 설정 | 프레임 고정 드론 2종 실제 회전+스피커 음원 동시 녹음, 방 3개, 위/아래 8ch 어레이+단일 마이크, SNR 약 -57~-3 dB | 드론·로봇 ego-noise 하 사람 존재 감지(음성/비음성/비인간), 잡음 억제·마이크 배치 비교 | MIT(HF, 검색 결과 기준) | 공개 (Hugging Face) | NeurIPS 2025 D&B | [상세](datasets/DroneAudioSet.md) |
+| SPCUP19 (IEEE SP Cup 2019) | 영어 음성 + 백색잡음 | 정지 300개(약 2초)·비행 36개(4초), 8ch | DREGON 장비(쿼드로터 정육면체 8ch, 44.1 kHz), 고정 스피커·이동 드론 | 로터 잡음 하 음성 방향 추정 표준 과제 | 학술·교육 무료 추정(미확인) | 공개 (dregon.inria.fr, Kaggle 미러) | IEEE SPM 2019 | [상세](datasets/SPCup19-Drone-SSL.md) |
 
 ## 논문 요약
 | 제목 | 저자 | 학회/연도 | 사용 데이터셋 | 핵심 내용 | 링크 |
@@ -69,7 +70,7 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | The third CHiME Challenge | Barker 외 | ASRU 2015 | CHiME-3/4 | 태블릿 다채널 잡음 ASR 챌린지 | [요약](papers/2015-CHiME-3-Challenge.md) |
 | An analysis of environment, microphone and data simulation mismatches in robust speech recognition | Vincent, Watanabe 외 | CSL 2017 | CHiME-3/4 | 불일치가 강건 ASR에 미치는 영향 분석 | [요약](papers/2017-CHiME-4-Mismatch-Analysis.md) |
 | DEMAND database | Thiemann, Ito, Vincent | ICA 2013 | DEMAND | 다양한 환경 다채널 잡음 DB | [요약](papers/2013-DEMAND.md) |
-| RoboOmni | 미확인 | arXiv 2025 | OmniAction | 맥락적 음성 지시 omni-modal 로봇 | [요약](papers/2025-RoboOmni.md) |
+| RoboOmni: Proactive Robot Manipulation in Omni-modal Context | Wang, Fu 외 (Fudan/OpenMOSS) | ICLR 2026 | OmniAction | 음성·환경음·시각 맥락에서 의도 추론 후 확인 질문·행동 | [요약](papers/2025-RoboOmni.md) |
 | HEAR (Vision-Sound-Language-Action) | Nie, Deng, Wang 외 | IJRR 2026 (arXiv) | OpenX-Sound, HEAR-Bench | 스트리밍 오디오 메모리로 Blind Execution Interval 해소 | [요약](papers/2026-HEAR.md) |
 | From Instruction to Event: Sound-Triggered Mobile Manipulation | Ju, Huang 외 | arXiv 2026 | Habitat-Echo, STMM-1.9K | 소리 이벤트 트리거 이동 조작 | [요약](papers/2026-Sound-Triggered-Mobile-Manipulation.md) |
 | SLURP: A Spoken Language Understanding Resource Package | Bastianelli, Vanzo, Swietojanski, Rieser | EMNLP 2020 | SLURP | 홈 로봇 비서 18도메인 SLU 벤치마크, SLU-F1 | [요약](papers/2020-SLURP.md) |
@@ -104,6 +105,10 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 | Development, Deployment and Applications of Robot Audition Open Source Software HARK | Nakadai, Okuno, Mizumoto | J. Robotics and Mechatronics 2017 (선행 IEEE Humanoids 2008) | 응용 사례 | 로봇 청각 오픈소스 미들웨어(위치 추정·분리·ASR 연동), HARK-Embedded/SaaS | [요약](papers/2017-HARK.md) |
 | DroneAudioset: An Audio Dataset for Drone-based Search and Rescue | Gupta, Ramesh 외 (NUS) | NeurIPS 2025 D&B | DroneAudioSet | 드론 잡음+음원 실측 동시 녹음 23.5시간, MVDR/MP-SENet → SSLAM 사람 존재 3범주 분류 베이스라인 | [요약](papers/2025-DroneAudioSet.md) |
 | Enhancing drone audition with rotor-conditioned deep models | Gulli, Fontana, Drioli, Salvati, Ferrin | EURASIP JASMP 2025 | DREGON | 로터 속도 시계열로 조건화한 음성 향상, 16개 구성 중 13개 최고, 25% 파라미터 경량 모델도 최고 근접 | [요약](papers/2025-Rotor-Conditioned-Drone-Audition.md) |
+| ELLSA: End-to-end Listen, Look, Speak and Act | Wang, Yu 외 (Tsinghua·ByteDance) | ICLR 2026 | LIBERO 계열(미확인), 음성 QA | full-duplex 시각·음성·행동 동시 처리, SA-MoE | [요약](papers/2025-ELLSA.md) |
+| Audio-Based Search and Rescue with a Drone: Highlights from the IEEE Signal Processing Cup 2019 | Deleforge, Di Carlo, Strauss, Serizel, Marcenaro | IEEE Signal Processing Magazine 2019 | SPCUP19 (DREGON) | 드론 탑재 8ch 음원 위치 추정 학생 대회, 정지 300·비행 36 녹음, 10° 이내 정확도 | [요약](papers/2019-SP-Cup-2019-Drone-Search-and-Rescue.md) |
+| Normalise or condition? Noise-floor front-ends for on-board KWS under UAV rotor ego-noise | Lin, Xue, Zhang, Schofield, Green | arXiv 2026 | Speech Commands v2, DroneAudioSet, ESC-50 | 잡음 바닥 정규화는 스트리밍 오경보 10배, 조건화(NPC-a)는 1 FA/h에서 −10 dB +8포인트, Jetson 3.2 ms/100 ms | [요약](papers/2026-UAV-KWS-Noise-Floor-Front-Ends.md) |
+| Real-Validated UAV Audition Under Rotor Ego-Noise for Low-False-Alarm Human Detection | 미확인 | arXiv 2026 | 실제 UAV 녹음(DroneAudioSet 추정) | BEATs 어댑터+로터 조건화(EgoRAP-DA), FPR 5% recall 0.559 vs 0.483(유의성 경계) | [요약](papers/2026-Real-Validated-UAV-Audition-EgoRAP.md) |
 
 ## Daily 로그
 - [2026-10-29](daily/2026-10-29.md)
@@ -134,3 +139,5 @@ Physical AI(로봇, 체화 에이전트, 휴머노이드, 자율주행·차량, 
 - [2026-11-23](daily/2026-11-23.md)
 - [2026-11-24](daily/2026-11-24.md)
 - [2026-11-25](daily/2026-11-25.md)
+- [2026-11-26](daily/2026-11-26.md)
+- [2026-11-27](daily/2026-11-27.md)
